@@ -1,0 +1,1901 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+ExtentReports Library 2.41.0 | http://relevantcodes.com/extentreports-for-selenium/ | https://github.com/anshooarora/
+Copyright (c) 2015, Anshoo Arora (Relevant Codes) | Copyrights licensed under the New BSD License | http://opensource.org/licenses/BSD-3-Clause
+Documentation: http://extentreports.relevantcodes.com 
+-->
+
+<meta charset='UTF-8' /> 
+<meta name='description' content='ExtentReports (by Anshoo Arora) is a reporting library for automation testing for .NET and Java. It creates detailed and beautiful HTML reports for modern browsers. ExtentReports shows test and step summary along with dashboards, system and environment details for quick analysis of your tests.' />
+<meta name='robots' content='noodp, noydir' />
+<meta name='viewport' content='width=device-width, initial-scale=1' />
+<meta name='extentx' id='extentx' content='' />
+
+<title>
+Automation Report
+</title>
+
+
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+<link href='https://cdn.rawgit.com/anshooarora/extentreports/97fc3fe7f55cba86a4f5b6ff9a2bb80de3e4867c/cdn/extent.css' type='text/css' rel='stylesheet' />
+
+<style>
+
+            
+
+      
+        
+</style>
+</head>
+
+
+<body class='extent standard hide-overflow'>
+<!-- nav -->
+<nav>
+<div class='logo-container'>
+<a class='logo-content' href='http://extentreports.relevantcodes.com'>
+<span>ExtentReports</span>
+</a>
+<a href='#' data-activates='slide-out' class='button-collapse hide-on-large-only'><i class='mdi-navigation-apps'></i></a>
+</div>
+<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+<li class='analysis waves-effect active'><a href='#!' class='test-view' onclick="_updateCurrentStage(0)"><i class='mdi-action-dashboard'></i>Test Details</a></li>
+<li class='analysis waves-effect'><a href='#!' class='categories-view' onclick="_updateCurrentStage(1)"><i class='mdi-maps-local-offer'></i>Categories</a></li>
+<li class='analysis waves-effect'><a href='#!' class='dashboard-view'><i class='mdi-action-track-changes'></i></i>Analysis</a></li>
+</ul>
+<span class='report-name'>Automation Report</span> <span class='report-headline'></span>
+<ul class='right hide-on-med-and-down nav-right'>
+<li class='theme-selector' alt='Click to toggle dark theme. To enable by default, use js configuration $("body").addClass("dark");' title='Click to toggle dark theme. To enable by default, use js configuration $("body").addClass("dark");'>
+<i class='mdi-hardware-desktop-windows'></i>
+</li>
+<li>
+<span class='suite-started-time'>2017-03-24 03:11:45</span>
+</li>
+<li>
+<span>v2.41.0</span>
+</li>
+</ul>
+</nav>
+<!-- /nav -->
+
+<!-- container -->
+<div class='container'>
+
+<!-- dashboard -->
+<div id='dashboard-view' class='row'>
+<div class='time-totals'>
+<div class='col l2 m4 s6'>
+<div class='card suite-total-tests'> 
+<span class='panel-name'>Total Tests</span> 
+<span class='total-tests'> <span class='panel-lead'></span> </span> 
+</div> 
+</div>
+<div class='col l2 m4 s6'>
+<div class='card suite-total-steps'> 
+<span class='panel-name'>Total Steps</span> 
+<span class='total-steps'> <span class='panel-lead'></span> </span> 
+</div> 
+</div>
+<div class='col l2 m4 s12'>
+<div class='card suite-total-time-current'> 
+<span class='panel-name'>Total Time Taken (Current Run)</span> 
+<span class='suite-total-time-current-value panel-lead'>0h 19m 50s+607ms</span> 
+</div> 
+</div>
+<div class='col l2 m4 s12'>
+<div class='card suite-total-time-overall'> 
+<span class='panel-name'>Total Time Taken (Overall)</span> 
+<span class='suite-total-time-overall-value panel-lead'>0h 19m 50s+607ms</span> 
+</div> 
+</div>
+<div class='col l2 m4 s6 suite-start-time'>
+<div class='card accent green-accent'> 
+<span class='panel-name'>Start</span> 
+<span class='panel-lead suite-started-time'>2017-03-24 02:51:55</span> 
+</div> 
+</div>
+<div class='col l2 m4 s6 suite-end-time'>
+<div class='card accent pink-accent'> 
+<span class='panel-name'>End</span> 
+<span class='panel-lead suite-ended-time'>2017-03-24 03:11:45</span> 
+</div> 
+</div>
+</div>
+<div class='charts'>
+<div class='col s12 m6 l4 fh'> 
+<div class='card-panel'> 
+<div>
+<span class='panel-name'>Tests View</span>
+</div> 
+<div class='panel-setting modal-trigger test-count-setting right'>
+<a href='#test-count-setting'><i class='mdi-navigation-more-vert text-md'></i></a>
+</div> 
+<div class='chart-box'>
+<canvas class='text-centered' id='test-analysis'></canvas>
+</div> 
+<div>
+<span class='weight-light'><span class='t-pass-count weight-normal'></span> test(s) passed</span>
+</div> 
+<div>
+<span class='weight-light'><span class='t-fail-count weight-normal'></span> test(s) failed, <span class='t-others-count weight-normal'></span> others</span>
+</div> 
+</div> 
+</div> 
+<div class='col s12 m6 l4 fh'> 
+<div class='card-panel'> 
+<div>
+<span class='panel-name'>Steps View</span>
+</div> 
+<div class='panel-setting modal-trigger step-status-filter right'>
+<a href='#step-status-filter'><i class='mdi-navigation-more-vert text-md'></i></a>
+</div> 
+<div class='chart-box'>
+<canvas class='text-centered' id='step-analysis'></canvas>
+</div> 
+<div>
+<span class='weight-light'><span class='s-pass-count weight-normal'></span> step(s) passed </span>
+</div> 
+<div>
+<span class='weight-light'><span class='s-fail-count weight-normal'></span> step(s) failed, <span class='s-others-count weight-normal'></span> others</span>
+</div> 
+</div> 
+</div>
+<div class='col s12 m12 l4 fh'> 
+<div class='card-panel'> 
+<span class='panel-name'>Pass Percentage</span> 
+<span class='pass-percentage panel-lead'></span> 
+<div class='progress light-blue lighten-3'> 
+<div class='determinate light-blue'></div> 
+</div> 
+</div> 
+</div>
+</div>
+<div class='system-view'>
+<div class='col l4 m12 s12'>
+<div class='card-panel'>
+<span class='label info outline right'>Environment</span>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User Name</td>
+<td>raghad1</td>
+</tr>
+<tr>
+<td>OS</td>
+<td>Windows 7</td>
+</tr>
+<tr>
+<td>Java Version</td>
+<td>1.8.0_102</td>
+</tr>
+<tr>
+<td>Host Name</td>
+<td>LASST264424</td>
+</tr>
+<tr>
+<td>Browser version</td>
+<td>v31.0</td>
+</tr>
+<tr>
+<td>Cucumber version</td>
+<td>v1.2.3</td>
+</tr>
+<tr>
+<td>Selenium version</td>
+<td>v2.53.0</td>
+</tr>
+<tr>
+<td>Environment</td>
+<td>QA</td>
+</tr>
+<tr>
+<td>Browser Name</td>
+<td>Chrome</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class='category-summary-view'>
+<div class='col l4 m6 s12'>
+<div class='card-panel'>
+<span class='label info outline right'>Categories</span>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+@Regression
+</td>
+</tr>
+<tr>
+<td>
+@smokeTest
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<!-- /dashboard -->
+
+<!-- tests -->
+<div id='test-view' class='row _addedTable'>
+<div class='col _addedCell1'>
+<div class='contents'>
+<div class='card-panel heading'>
+<h5>Tests</h5>
+</div>
+<div class='card-panel filters'>
+<div>
+<a data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#' class='dropdown-button button tests-toggle'><i class='mdi-action-subject icon'></i></a>
+<ul id='tests-toggle' class='dropdown-content'>
+<li class='pass'><a href='#!'>Pass</a></li>
+<li class='fail'><a href='#!'>Fail</a></li>
+<li class='skip'><a href='#!'>Skip</a></li>
+<li class='divider'></li>
+<li class='clear'><a href='#!'>Clear Filters</a></li>
+</ul>
+</div>
+<div>
+<a data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#' class='category-toggle dropdown-button button'><i class='mdi-maps-local-offer icon'></i></a>
+<ul id='category-toggle' class='dropdown-content'>
+<li class='@Regression'><a href='#!'>@Regression</a></li>
+<li class='@smokeTest'><a href='#!'>@smokeTest</a></li>
+<li class='divider'></li>
+<li class='clear'><a href='#!'>Clear Filters</a></li>
+</ul>
+</div>
+<div>
+<a id='clear-filters' alt='Clear Filters' title='Clear Filters'><i class='mdi-navigation-close icon'></i></a>
+</div>
+<div>&nbsp;&middot;&nbsp;</div>
+<div>
+<a id='enableDashboard' alt='Enable Dashboard' title='Enable Dashboard'><i class='mdi-action-track-changes icon'></i></a>
+</div>
+<div>
+<a id='refreshCharts' alt='Refresh Charts on Filters' title='Refresh Charts on Filters' class='enabled'><i class='mdi-navigation-refresh icon'></i></i></a>
+</div>
+<div>&nbsp;&middot;</div>
+<div class='search' alt='Search Tests' title='Search Tests'>
+<div class='input-field left'>
+<input id='searchTests' type='text' class='validate' placeholder='Search Tests...'>
+</div>
+<i class='mdi-action-search icon'></i>
+</div>
+</div>
+<div class='card-panel no-padding-h no-padding-v no-margin-v'>
+<div class='wrapper'>
+<ul id='test-collection' class='test-collection'>
+<li class='collection-item test displayed active pass hasChildren' extentid='49f78209-de5d-4fce-97eb-8709f428471e'>
+<div class='test-head'>
+<span class='test-name'>Feature: Validation of the Remove CTA feature </span>
+<span class='test-status label right outline capitalize pass'>pass</span>
+<span class='category-assigned hide  @smoketest'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-03-24 02:52:26</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-03-24 03:01:56</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 9m 30s+421ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>@smokeTest</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 02:52:26</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 02:53:59</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 1m 33s+610ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Flow of SIM Free with any accessory</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:52:54</td>
+<td class='step-name'>Given I am an eComm user</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:53:48</td>
+<td class='step-name'>When I add 'sim free' device in my basket along with any accessory</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:53:48</td>
+<td class='step-name'>Then I SHOULD be shown a 'Remove' CTA in front of the 'sim free device'</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:53:59</td>
+<td class='step-name'>And Remove the device from the basket, If I click on Remove</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 02:53:59</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 02:55:36</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 1m 36s+296ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Flow of SIM Free with Pay Monthly sim</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:54:34</td>
+<td class='step-name'>Given I am an eComm user</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:55:22</td>
+<td class='step-name'>When I add 'sim free' device in my basket along with Pay Monthly sim</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:55:22</td>
+<td class='step-name'>Then I SHOULD be shown a 'Remove' CTA in front of the 'sim free device'</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:55:36</td>
+<td class='step-name'>And Remove the device from the basket, If I click on Remove</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 02:55:36</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 02:56:58</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 1m 22s+82ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Flow of SIM Free with PAYG sim and an accessory</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:56:10</td>
+<td class='step-name'>Given I am an eComm user</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:56:58</td>
+<td class='step-name'>When I add 'sim free' device in my basket along with PAYG sim and an accessory</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:56:58</td>
+<td class='step-name'>Then I SHOULD be shown a 'Remove' CTA in front of the 'sim free device'</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:56:58</td>
+<td class='step-name'>And Remove the device as well as the PAYG Sim from the basket, If I click on 'Remove'</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 02:56:58</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 02:58:51</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 1m 53s+281ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Flow of SIM Free with PayM with accessory</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:57:31</td>
+<td class='step-name'>Given I am an eComm user</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:58:39</td>
+<td class='step-name'>When I add 'sim free' device in my basket along with PayM and an accessory</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:58:39</td>
+<td class='step-name'>Then I SHOULD be shown a 'Remove' CTA in front of the 'sim free device'</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:58:49</td>
+<td class='step-name'>And Remove the device from the basket, If I click on Remove</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 02:58:51</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 03:01:02</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 2m 10s+674ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Flow of SIM Free with SIM Free Device</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>02:59:25</td>
+<td class='step-name'>Given I am an eComm user</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:01:02</td>
+<td class='step-name'>When My basket contains 'Sim free' device only</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:01:02</td>
+<td class='step-name'>Then I SHOULD NOT be shown a 'Remove' CTA in front of the 'sim free device'</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 03:01:02</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 03:01:56</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 0m 54s+349ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Flow of SIM Free with PAYG Sim</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:01:34</td>
+<td class='step-name'>Given I am an eComm user</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:01:56</td>
+<td class='step-name'>When My basket contains 'Sim free' device with PAYG Sim</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:01:56</td>
+<td class='step-name'>Then I SHOULD NOT be shown a 'Remove' CTA in front of the 'sim free device'</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class='collection-item test displayed active pass hasChildren' extentid='606c2e58-e22a-45f8-8de0-04f426a140cb'>
+<div class='test-head'>
+<span class='test-name'>Feature: valiudation the Enhanced Sort Tab </span>
+<span class='test-status label right outline capitalize pass'>pass</span>
+<span class='category-assigned hide  @smoketest'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-03-24 03:01:57</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-03-24 03:03:40</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 1m 43s+462ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>@smokeTest</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 03:01:57</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 03:02:23</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 0m 26s+104ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Enhancing "SORT" tab on Tablet listing page</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:02:15</td>
+<td class='step-name'>Given that I am an upgrading/acqusition customer Tablet journey</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:02:15</td>
+<td class='step-name'>And I land on the tablet listing page on O2 Shop</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:02:20</td>
+<td class='step-name'>And I click on the SORT tab of tablet</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:02:20</td>
+<td class='step-name'>Then the enhanced SORT Tablet should be displayed to me as per given UX</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 03:02:23</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 03:02:49</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 0m 26s+658ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Enhancing "SORT" tab on Smartwatches trackers listing page</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:02:41</td>
+<td class='step-name'>Given that I am an upgrading/acquisition customer Smartwatches</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:02:41</td>
+<td class='step-name'>And I land on the Smartwatchess Trackers listing page on O2 Shop</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:02:47</td>
+<td class='step-name'>And I click on the SORT tab of Smartwatches</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:02:49</td>
+<td class='step-name'>Then the enhanced SORT Smartwatches should be displayed to me as per given UX in (2 columns)</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 03:02:49</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 03:03:16</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 0m 26s+475ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Enhancing "SORT" tab on Fitness trackers listing page</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:03:08</td>
+<td class='step-name'>Given that I am an upgrading/acquisition customer Fitness Journey</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:03:08</td>
+<td class='step-name'>And I land on the FtinessTracker Trackers listing page on O2 Shop</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:03:14</td>
+<td class='step-name'>And I click on the SORT tab of Fitness</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:03:14</td>
+<td class='step-name'>Then the enhanced SORT Fitness should be displayed to me as per given UX in (2 columns)</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 03:03:16</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 03:03:40</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 0m 24s+216ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Enhancing "SORT" tab on accessories listing page</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:03:35</td>
+<td class='step-name'>Given that I am an upgrading/acquisition customer Accessory Journey</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:03:35</td>
+<td class='step-name'>And I land on the accessory listing page on O2 Shop</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:03:40</td>
+<td class='step-name'>And I click on the SORT tab of accesory</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:03:40</td>
+<td class='step-name'>Then the enhanced SORT accessories should be displayed to me as per given UX.</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class='collection-item test displayed active pass hasChildren' extentid='af49a4f7-1927-4ce4-988a-9bd77978bc6f'>
+<div class='test-head'>
+<span class='test-name'>Feature: valiudation the Enhanced filter Tab </span>
+<span class='test-status label right outline capitalize pass'>pass</span>
+<span class='category-assigned hide  @smoketest'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-03-24 03:03:40</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-03-24 03:05:31</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 1m 50s+644ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>@smokeTest</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 03:03:40</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 03:03:59</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 0m 18s+831ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Enhancing Filter Tab on Tablet Listing page</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:03:59</td>
+<td class='step-name'>Given that I am an upgrading/acqusition customer Tablet journey</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:03:59</td>
+<td class='step-name'>And I land on the tablet listing page on O2 Shop</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:03:59</td>
+<td class='step-name'>Then the enhanced filter tab should be displayed to on Tablet as per given Ux</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 03:03:59</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 03:04:51</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 0m 52s+412ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Enhancing Filter Tab on Accessory Listing page</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:04:51</td>
+<td class='step-name'>Given that I am an upgrading/acquisition customer Accessory Journey</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:04:51</td>
+<td class='step-name'>And I land on the accessory listing page on O2 Shop</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:04:51</td>
+<td class='step-name'>Then the enhanced filter tab should be displayed to on Accessory as per given UX</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 03:04:52</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 03:05:10</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 0m 18s+715ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Enhancing Filter Tab on Fitness Trackers Listing page</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:05:10</td>
+<td class='step-name'>Given that I am an upgrading/acquisition customer Fitness Journey</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:05:10</td>
+<td class='step-name'>And I land on the Ftiness Trackers listing page on O2 Shop</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:05:10</td>
+<td class='step-name'>Then the enhanced filter tab should be displayed to on Fitness as per given Ux</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 03:05:10</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 03:05:31</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 0m 20s+673ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Enhancing Filter Tab on Smartwatches Trackers Listing page</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:05:29</td>
+<td class='step-name'>Given that I am an upgrading/acquisition customer Smartwatches</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:05:29</td>
+<td class='step-name'>And I land on the Smartwatches Trackers listing page on O2 Shop</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:05:29</td>
+<td class='step-name'>Then the enhanced filter tab should be displayed to Smartwatches as per given Ux</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class='collection-item test displayed active pass hasChildren' extentid='b7f92614-c93a-4747-8efa-efceb673ff2a'>
+<div class='test-head'>
+<span class='test-name'>Feature: Promotional Ribbon eComm10202 </span>
+<span class='test-status label right outline capitalize pass'>pass</span>
+<span class='category-assigned hide  @regression'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-03-24 03:05:31</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-03-24 03:06:26</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 54s+626ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>@Regression</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 03:05:31</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 03:06:26</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 0m 54s+623ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Promotional Ribbon.</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:05:47</td>
+<td class='step-name'>Given that I am a merchandising manager of o2</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:06:05</td>
+<td class='step-name'>When I want to promote any offer for a particular sim-only on the paymonthly sims page</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:06:25</td>
+<td class='step-name'>Then I should be able to do so using the green and blue ribbon as per the given designs</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:06:25</td>
+<td class='step-name'>Then I should be able to see only 30 characters on the Ribbon</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class='collection-item test displayed active pass hasChildren' extentid='938e8dea-0e3a-4fbb-83b3-8f5caf3e9c17'>
+<div class='test-head'>
+<span class='test-name'>Feature: Ecom_10207 Tarrif Decending order validation. </span>
+<span class='test-status label right outline capitalize pass'>pass</span>
+<span class='category-assigned hide  @regression'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-03-24 03:06:26</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-03-24 03:07:25</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 59s+432ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>@Regression</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 03:06:26</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 03:07:25</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 0m 59s+429ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Validate the tarrif containing in the decending order</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:06:58</td>
+<td class='step-name'>Given that I am a merchandising manager</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:07:25</td>
+<td class='step-name'>When I am deciding the order of the pay-monthly sim tariffs</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:07:25</td>
+<td class='step-name'>Then on landing of the Pay monthly sims page, the default order of the tariffs from the tile below the promoted white tile should be from High to low data</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class='collection-item test displayed active pass hasChildren' extentid='87ececd3-461d-4a6d-9218-fb0956ef2831'>
+<div class='test-head'>
+<span class='test-name'>Feature: SimFreeDeviceRemoveValidation. </span>
+<span class='test-status label right outline capitalize pass'>pass</span>
+<span class='category-assigned hide  @regression'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-03-24 03:07:25</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-03-24 03:08:09</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 44s+41ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>@Regression</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 03:07:25</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 03:08:09</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 0m 44s+40ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: SimFreeDeviceRemoveValidation</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:07:59</td>
+<td class='step-name'>Given I am an eComm user12</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:08:07</td>
+<td class='step-name'>When I choose 'like new' sim free device</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class='collection-item test displayed active pass hasChildren' extentid='aa189fc4-9baf-4fd3-a94f-5aa34a6b79a3'>
+<div class='test-head'>
+<span class='test-name'>Feature: Sim_Free_Pacakge_Validation </span>
+<span class='test-status label right outline capitalize pass'>pass</span>
+<span class='category-assigned hide  @regression'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-03-24 03:08:09</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-03-24 03:09:44</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 1m 34s+959ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>@Regression</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 03:08:09</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 03:08:57</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 0m 48s+203ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Pacakage validation 12month Tarrif</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:08:36</td>
+<td class='step-name'>Given I am an eComm user in o2</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:08:56</td>
+<td class='step-name'>When I choose 'like new' sim free device"Device_only_sim_free_Select"</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:08:57</td>
+<td class='step-name'>And select "30 days" tariff"30days" and "tariff_30"</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:08:57</td>
+<td class='step-name'>Then Package section Airtime Plan SHOULD also be updated accordingly to show the correct tariff associated data like contract length"30 days contract"</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 03:08:57</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 03:09:44</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 0m 46s+750ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Pacakage validation 30days Tarrif</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:09:22</td>
+<td class='step-name'>Given I am an eComm user in o2</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:09:43</td>
+<td class='step-name'>When I choose 'like new' sim free device"Device_only_sim_free_Select"</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:09:44</td>
+<td class='step-name'>And select "12 months" tariff"12months" and "tariff_12"</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:09:44</td>
+<td class='step-name'>Then Package section Airtime Plan SHOULD also be updated accordingly to show the correct tariff associated data like contract length"12 month contract"</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class='collection-item test displayed active pass hasChildren' extentid='63ee1914-579e-405f-a9cc-359e83050cd1'>
+<div class='test-head'>
+<span class='test-name'>Feature: Tablet_MBB tab  - eComm10210 </span>
+<span class='test-status label right outline capitalize pass'>pass</span>
+<span class='category-assigned hide  @regression'></span>
+</div>
+<div class='test-body'>
+<div class='test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-03-24 03:09:44</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-03-24 03:11:45</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 2m 1s+4ms</span>
+</div>
+<div class='test-desc'></div>
+<div class='test-attributes'>
+<div class='categories'>
+<span class='category text-white'>@Regression</span>
+</div>
+</div>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+<li class='displayed pass node-1x'>
+<div class='collapsible-header test-node pass'>
+<div class='right test-info'>
+<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-2 text-white'>2017-03-24 03:09:44</span>
+<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-2 text-white'>2017-03-24 03:11:45</span>
+<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-2 text-white'>0h 2m 1s+2ms</span>
+<span class='test-status label outline capitalize pass'>pass</span>
+</div>
+<div class='test-node-name'>Scenario: Tablet Tab.</div>
+<div class='test-node-desc'></div>
+</div>
+<div class='collapsible-body'>
+<div class='test-steps'>
+<table class='bordered table-results'>
+<thead>
+<tr>
+<th>Status</th>
+<th>Timestamp</th>
+<th>StepName</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:10:00</td>
+<td class='step-name'>Given I am an eComm test user02 in o2</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:10:38</td>
+<td class='step-name'>When I choose Sims and Pay Monthly sims</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:10:38</td>
+<td class='step-name'>And select Tablet</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:10:38</td>
+<td class='step-name'>And I am able to see the contract length as 12 months and 30 days</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:11:08</td>
+<td class='step-name'>And I click on 12 months contact length to see all tariffs that are relevant</td>
+<td class='step-details'>PASSED</td>
+</tr>
+<tr>
+<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+<td class='timestamp'>03:11:43</td>
+<td class='step-name'>And I click on 30 dayscontact length to see all tariffs that are relevant</td>
+<td class='step-details'>PASSED</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id='test-details-wrapper' class='col _addedCell2'>
+<div class='contents'>
+<div class='card-panel details-view'>
+<h5 class='details-name'></h5>
+<div class='step-filters right'>
+<span class='info' alt='info' title='info'><i class='mdi-action-info-outline'></i></span>
+<span class='pass' alt='pass' title='pass'><i class='mdi-action-check-circle'></i></span>
+<span class='fail' alt='fail' title='fail'><i class='mdi-navigation-cancel'></i></span>
+<span class='fatal' alt='fatal' title='fatal'><i class='mdi-navigation-cancel'></i></span>
+<span class='error' alt='error' title='error'><i class='mdi-alert-error'></i></span>
+<span class='warning' alt='warning' title='warning'><i class='mdi-alert-warning'></i></span>
+<span class='skip' alt='skip' title='skip'><i class='mdi-content-redo'></i></span>
+<span class='clear-step-filter' alt='Clear filters' title='Clear filters'><i class='mdi-content-clear'></i></span>
+</div>
+<div class='details-container'>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- /tests -->
+
+<!-- categories -->
+<div id='categories-view' class='row _addedTable hide'>
+<div class='col _addedCell1'>
+<div class='contents'>
+<div class='card-panel heading'>
+<h5>Categories</h5>
+</div>
+<div class='card-panel filters'>
+<div class='search' alt='Search tests' title='Search tests'>
+<div class='input-field left'>
+<input id='searchTests' type='text' class='validate' placeholder='Search tests...'>
+</div>
+<i class='mdi-action-search icon'></i>
+</div>
+</div>
+<div class='card-panel no-padding-h no-padding-v'>
+<div class='wrapper'>
+<ul id='cat-collection' class='cat-collection'>
+<li class='category-item displayed'>
+<div class='cat-head'>
+<span class='category-name'>@Regression</span>
+</div>
+<div class='category-status-counts'>
+<span class='pass label dot'>Pass: 11</span>
+</div>
+<div class='cat-body'>
+<div class='category-status-counts'>
+<div class='button-group'>
+<a href='#!' class='pass label filter'>Pass <span class='icon'>11</span></a>
+<a href='#!' class='fail label filter'>Fail <span class='icon'>0</span></a>
+<a href='#!' class='other label filter'>Others <span class='icon'>0</span></a>
+</div>
+</div>
+<div class='cat-tests'>
+<table class='bordered'>
+<thead>
+<tr>
+<th>RunDate</th>
+<th>Test Name</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class='pass'>
+<td>2017-03-24 03:05:31</td>
+<td><span class='category-link linked' extentid='2e1681f8-3dff-4ef0-83ec-4b4ac4c753a4'>Scenario: Promotional Ribbon.</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:05:31</td>
+<td><span class='category-link linked' extentid='b7f92614-c93a-4747-8efa-efceb673ff2a'>Feature: Promotional Ribbon eComm10202</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:06:26</td>
+<td><span class='category-link linked' extentid='582b0f7c-a83a-4e9b-bf1d-2e12298037ff'>Scenario: Validate the tarrif containing in the decending order</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:06:26</td>
+<td><span class='category-link linked' extentid='938e8dea-0e3a-4fbb-83b3-8f5caf3e9c17'>Feature: Ecom_10207 Tarrif Decending order validation.</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:07:25</td>
+<td><span class='category-link linked' extentid='8f3b4783-f22c-419a-aacc-18a3f8efbfd4'>Scenario: SimFreeDeviceRemoveValidation</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:07:25</td>
+<td><span class='category-link linked' extentid='87ececd3-461d-4a6d-9218-fb0956ef2831'>Feature: SimFreeDeviceRemoveValidation.</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:08:09</td>
+<td><span class='category-link linked' extentid='b713faff-86d6-429a-8614-fff4a27745a0'>Scenario: Pacakage validation 12month Tarrif</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:08:57</td>
+<td><span class='category-link linked' extentid='676e6bba-b07a-4bf7-8f3a-921f9c37a3ed'>Scenario: Pacakage validation 30days Tarrif</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:08:09</td>
+<td><span class='category-link linked' extentid='aa189fc4-9baf-4fd3-a94f-5aa34a6b79a3'>Feature: Sim_Free_Pacakge_Validation</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:09:44</td>
+<td><span class='category-link linked' extentid='6d9f9651-49a4-4504-a997-1eabdb4bf707'>Scenario: Tablet Tab.</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:09:44</td>
+<td><span class='category-link linked' extentid='63ee1914-579e-405f-a9cc-359e83050cd1'>Feature: Tablet_MBB tab  - eComm10210</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tbody>
+</table>
+</div>
+</div> 
+</li>
+<li class='category-item displayed'>
+<div class='cat-head'>
+<span class='category-name'>@smokeTest</span>
+</div>
+<div class='category-status-counts'>
+<span class='pass label dot'>Pass: 17</span>
+</div>
+<div class='cat-body'>
+<div class='category-status-counts'>
+<div class='button-group'>
+<a href='#!' class='pass label filter'>Pass <span class='icon'>17</span></a>
+<a href='#!' class='fail label filter'>Fail <span class='icon'>0</span></a>
+<a href='#!' class='other label filter'>Others <span class='icon'>0</span></a>
+</div>
+</div>
+<div class='cat-tests'>
+<table class='bordered'>
+<thead>
+<tr>
+<th>RunDate</th>
+<th>Test Name</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class='pass'>
+<td>2017-03-24 02:52:26</td>
+<td><span class='category-link linked' extentid='8e434725-980f-4ae1-b59f-863f88358e9b'>Scenario: Flow of SIM Free with any accessory</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 02:53:59</td>
+<td><span class='category-link linked' extentid='5c9a2134-f1c6-4e73-a064-022126165a9b'>Scenario: Flow of SIM Free with Pay Monthly sim</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 02:55:36</td>
+<td><span class='category-link linked' extentid='e4658eac-2fdc-42f6-b289-939465fad6c5'>Scenario: Flow of SIM Free with PAYG sim and an accessory</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 02:56:58</td>
+<td><span class='category-link linked' extentid='a7fb80fb-22d4-4308-a311-565724e47d24'>Scenario: Flow of SIM Free with PayM with accessory</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 02:58:51</td>
+<td><span class='category-link linked' extentid='e225d044-0724-4753-b89d-b1dabcd0bab8'>Scenario: Flow of SIM Free with SIM Free Device</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:01:02</td>
+<td><span class='category-link linked' extentid='e7ed6484-2c7d-4818-a1e0-b3743a19f885'>Scenario: Flow of SIM Free with PAYG Sim</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 02:52:26</td>
+<td><span class='category-link linked' extentid='49f78209-de5d-4fce-97eb-8709f428471e'>Feature: Validation of the Remove CTA feature</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:01:57</td>
+<td><span class='category-link linked' extentid='0819a3f8-d5a5-4afa-a810-1a9cfc9e3749'>Scenario: Enhancing "SORT" tab on Tablet listing page</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:02:23</td>
+<td><span class='category-link linked' extentid='b90c43d9-e74f-4d8c-b112-6c503f378374'>Scenario: Enhancing "SORT" tab on Smartwatches trackers listing page</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:02:49</td>
+<td><span class='category-link linked' extentid='8e8212b4-06e2-486b-a0a8-960cb2de82b3'>Scenario: Enhancing "SORT" tab on Fitness trackers listing page</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:03:16</td>
+<td><span class='category-link linked' extentid='069eec7e-eaf4-4c6c-b963-571edd9cd6e6'>Scenario: Enhancing "SORT" tab on accessories listing page</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:01:57</td>
+<td><span class='category-link linked' extentid='606c2e58-e22a-45f8-8de0-04f426a140cb'>Feature: valiudation the Enhanced Sort Tab</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:03:40</td>
+<td><span class='category-link linked' extentid='d10e105a-fb5e-4694-9690-b14586308475'>Scenario: Enhancing Filter Tab on Tablet Listing page</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:03:59</td>
+<td><span class='category-link linked' extentid='9407509d-b6ec-4e66-862c-2c7471fae946'>Scenario: Enhancing Filter Tab on Accessory Listing page</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:04:52</td>
+<td><span class='category-link linked' extentid='af3d4273-43a7-422b-a336-ab85ee191224'>Scenario: Enhancing Filter Tab on Fitness Trackers Listing page</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:05:10</td>
+<td><span class='category-link linked' extentid='ab31e7fe-964c-4690-a50e-9f55c5fd7604'>Scenario: Enhancing Filter Tab on Smartwatches Trackers Listing page</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tr class='pass'>
+<td>2017-03-24 03:03:40</td>
+<td><span class='category-link linked' extentid='af49a4f7-1927-4ce4-988a-9bd77978bc6f'>Feature: valiudation the Enhanced filter Tab</span></td>
+<td><div class='status label capitalize pass'>pass</div></td>
+</tr>
+<tbody>
+</table>
+</div>
+</div> 
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id='cat-details-wrapper' class='col _addedCell2'>
+<div class='contents'>
+<div class='card-panel details-view'>
+<h5 class='cat-name'></h5>
+<div class='cat-container'>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- /categories -->
+
+<!-- exceptions -->
+<!-- /exceptions -->
+
+<!-- testrunner logs -->
+<!-- /testrunner logs -->
+
+</div>
+<!-- /container -->
+
+<!-- test dashboard counts setting -->
+<div id='test-count-setting' class='modal bottom-sheet'> 
+<div class='modal-content'> 
+<h5>Configure Tests Count Setting</h5> 
+<input name='test-count-setting' type='radio' id='parentWithoutNodes' class='with-gap'> 
+<label for='parentWithoutNodes'>Parent Tests Only (Does not include child nodes in counts)</label> 
+<br> 
+<input name='test-count-setting' type='radio' id='parentWithoutNodesAndNodes' class='with-gap'> 
+<label for='parentWithoutNodesAndNodes'>Parent Tests Without Child Tests + Child Tests</label> 
+<br> 
+<input name='test-count-setting' type='radio' id='childNodes' class='with-gap'> 
+<label for='childNodes'>Child Tests Only</label> 
+</div> 
+<div class='modal-footer'> 
+<a href='#!' class='modal-action modal-close waves-effect waves-green btn'>Save</a> 
+</div> 
+</div>
+<!-- /test dashboard counts setting -->
+
+<!-- filter for step status -->
+<div id='step-status-filter' class='modal bottom-sheet'> 
+<div class='modal-content'> 
+<h5>Select status</h5> 
+<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-pass'> 
+<label for='step-dashboard-filter-pass'>Pass</label> 
+<br> 
+<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-fail'> 
+<label for='step-dashboard-filter-fail'>Fail</label> 
+<br> 
+<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-fatal'> 
+<label for='step-dashboard-filter-fatal'>Fatal</label> 
+<br> 
+<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-error'> 
+<label for='step-dashboard-filter-error'>Error</label> 
+<br> 
+<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-warning'> 
+<label for='step-dashboard-filter-warning'>Warning</label> 
+<br> 
+<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-skip'> 
+<label for='step-dashboard-filter-skip'>Skipped</label> 
+<br> 
+<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-info'> 
+<label for='step-dashboard-filter-info'>Info</label> 
+<br> 
+<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-unknown'> 
+<label for='step-dashboard-filter-unknown'>Unknown</label> 
+</div>
+<div class='modal-footer'> 
+<a href='#!' class='modal-action modal-close waves-effect waves-green btn'>Save</a> 
+</div> 
+</div>
+<!-- /filter for step status -->
+
+<script src='https://cdn.rawgit.com/anshooarora/extentreports/051be9b627c84bde3591f7e6268e8b70e334a760/cdn/extent.js' type='text/javascript'></script>
+
+<script>$(document).ready(function() { $('.logo span').html('ExtentReports'); });</script>
+<script>
+
+            
+        $(document).ready(function() {
+
+        });
+      
+        
+</script>
+</body>
+</html>
