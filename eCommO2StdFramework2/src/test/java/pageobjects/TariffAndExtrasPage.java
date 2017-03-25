@@ -47,13 +47,16 @@ public class TariffAndExtrasPage {
 		@FindBy(how=How.XPATH,using=("(//div/label)[1]"))
 		public static WebElement Contract_length;
 		
+		
 		//Below is for identifying through id
 		
-				@FindBy(id="qa-proceed-to-basket")
-				public static WebElement addToBasket;
-				
-				@FindBy(id="qa-proceed-to-basket-dock-header")
-				public static WebElement addToBasketDockHeader;
-	
+		@FindBy(id="qa-proceed-to-basket")
+		public static WebElement addToBasketLive;
+		
+		@FindBy(id="qa-proceed-to-basket-dock-header")
+		public static WebElement addToBasketDockHeader;
+		
+		@FindBy(id="addToBasket")
+		public static WebElement addToBasketTest;
 	
 }

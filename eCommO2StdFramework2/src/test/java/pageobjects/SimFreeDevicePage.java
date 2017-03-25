@@ -19,6 +19,8 @@ public class SimFreeDevicePage {
 		  
 	  }
 
+
+
 		@FindBy(how=How.XPATH,using="(//*[@id='PayMonthlyTariffsGridTab']/li[1]/div/h3)[1]") 
 		public static WebElement Device_only_sim_free_Tile ;
 	
@@ -26,12 +28,16 @@ public class SimFreeDevicePage {
 		@FindBy(how=How.XPATH,using="(//*[@id='PayMonthlyTariffsGridTab']/li[2]/div/h3)[1]") 
 		public static WebElement PayM_sim_free_Tile ;
 		
-		@FindBy(how=How.XPATH,using="(//*[@id='PayMonthlyTariffsGridTab']/li[3]/div/h3)[1]") 
+		@FindBy(how=How.XPATH,using="(//*[@id='PayMonthlyTariffsGridTab']/li[3]/div/h3)[1]")
 		public static WebElement PayG_sim_free_Tile ;
 		
 		@FindBy(how=How.XPATH,using="(//*[@id='PayMonthlyTariffsGridTab']/li[1]/div/div[4]/button[@value='Select'])[1]") 
 		public static WebElement Device_only_sim_free_Select ;
 		
+		
+		@FindBy(how=How.XPATH,using="(//a[contains(@href, '/shop/phones/oneplus/3t/#contractType=paymonthly')]") 
+		public static WebElement Oneplus3TSelect;
+				
 		@FindBy(how=How.XPATH,using="(//*[@id='PayMonthlyTariffsGridTab']/li[2]/div/div[5]/button[@value='Select'])[1]") 
 		public static WebElement PayM_sim_free_Select ;
 

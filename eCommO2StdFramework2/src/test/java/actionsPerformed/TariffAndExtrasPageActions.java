@@ -75,11 +75,26 @@ public class TariffAndExtrasPageActions {
 		}
 			
 		
-		public static void basket_select()
+		public static void basket_selectLive()
 		{
-			pageobjects.TariffAndExtrasPage.GotoBasket.sendKeys(Keys.ENTER);
+			
+			System.out.println("Now Adding to the basket");
+			pageobjects.TariffAndExtrasPage.addToBasketLive.click();
+			System.out.println("Added to the basket");
+			
+					
+		}
+		
+		
+		public static void basket_selectTest()
+		{
+			System.out.println("Now Adding to the basket");
+			pageobjects.TariffAndExtrasPage.addToBasketDockHeader.click();
+			System.out.println("Added to the basket");
+					
 			
 		}
+		
 	
 		public static void Tab_Select(String elementName) {
 			if(elementName.equalsIgnoreCase("12months"))

@@ -68,7 +68,7 @@ public void I_SHOULD_be_able_to_see_both_month_and_days_tab_just_above_the_tarif
     // Express the Regexp above with the code you wish you had
 	PageFactory.initElements(driver, TariffAndExtrasPage.class);
 	TariffAndExtrasPageActions.tariff_select("tariff");
-	TariffAndExtrasPageActions.basket_select();
+	TariffAndExtrasPageActions.basket_selectTest();
 }
 
 @And("^Remove copy 'Contract length is (\\d+) months.'$")
