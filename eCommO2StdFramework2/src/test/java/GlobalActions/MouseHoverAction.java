@@ -1,4 +1,4 @@
-package actionsPerformed;
+package GlobalActions;
 
 import java.awt.AWTException;
 import java.awt.Robot;

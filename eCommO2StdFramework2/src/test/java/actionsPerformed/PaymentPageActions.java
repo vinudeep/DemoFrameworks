@@ -37,14 +37,25 @@ public class PaymentPageActions {
 		  
 	  }
 	  
-	  public static void Card_Details()
+	 
+	  
+	  public static void Card_Details() throws InterruptedException
 	  {
-		  pageobjects.PaymentPage.Name_On_Card.sendKeys("Test Accepta");
-		  pageobjects.PaymentPage.Card_Number.sendKeys("4539791001730106");
-		  pageobjects.PaymentPage.Expiry_Month.sendKeys("01");
-		  pageobjects.PaymentPage.Expiry_Year.sendKeys("2016");
-		  pageobjects.PaymentPage.CVV_Security_Code.sendKeys("1234");
-		  pageobjects.PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
+			System.out.println("Entering Card details");
+
+			pageobjects.PaymentPage.driver.switchTo().frame("payment-iframe"); //switching the frame by ID
+
+			System.out.println("********We are switch to the iframe*******");
+			pageobjects.PaymentPage.Name_On_Card.sendKeys("Test Accepta");
+			pageobjects.PaymentPage.Card_Number.sendKeys("4539791001730106");
+			pageobjects.PaymentPage.Expiry_Month.sendKeys("01");
+			pageobjects.PaymentPage.Expiry_Year.sendKeys("2020");
+			pageobjects.PaymentPage.CVV_Security_Code.sendKeys("123");
+			pageobjects.PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
+		   System.out.println("*********We are done***************"); 
+		   pageobjects.PaymentPage.driver.switchTo().defaultContent();
+		   Thread.sleep(3000);
+		   System.out.println(pageobjects.PaymentPage.driver.getTitle());
 		  
 	  }
 	  
