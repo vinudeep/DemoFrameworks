@@ -2,10 +2,8 @@ package steps;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
 import actionsPerformed.AccessoryPageActions;
-import actionsPerformed.BasketPageActions;
 import actionsPerformed.FitnessTrackerPageActions;
 import actionsPerformed.GlobalAction;
 import actionsPerformed.SmartwatchesPageActions;
@@ -15,6 +13,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import helpers.Environment;
 import helpers.Filereadingutility;
+import junit.framework.Assert;
 import pageobjects.AccessoryPage;
 import pageobjects.BasketPage;
 import pageobjects.FitnessTrackerPage;
@@ -26,14 +25,15 @@ public class ECOM_10102 {
 
 	public WebDriver driver;
 	  
-    public ECOM_10102() {
+    public ECOM_10102() 
+    {
         driver = Hooks.driver;
-       
     }
 	
 
 @Given("^that I am an upgrading/acqusition customer Tablet journey$")
-public void that_I_am_an_upgrading_acqusition_customer_Tablet_journey() throws Throwable {
+public void that_I_am_an_upgrading_acqusition_customer_Tablet_journey() throws Throwable 
+{
     // Write code here that turns the phrase above into concrete actions
 	     GlobalAction b1=new GlobalAction();
          String Currenturl= b1.ExecutionURL("likenewurl");
@@ -85,6 +85,7 @@ public void that_I_am_an_upgrading_acquisition_customer_Fitness_Journey() throws
 
 
 
+@SuppressWarnings("deprecation")
 @And("^I land on the Ftiness Trackers listing page on O(\\d+) Shop$")
 public void i_land_on_the_Ftiness_Trackers_listing_page_on_O_Shop(int arg1) throws Throwable {
     // Write code here that turns the phrase above into concrete actions

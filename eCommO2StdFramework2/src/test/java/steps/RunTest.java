@@ -12,7 +12,7 @@ import cucumber.api.junit.Cucumber;
 	    glue={"steps"},
 		//features = "src/test/java/features/SimFreeDeviceRemoveValidation",
 		plugin = {"pretty", "html:target/cucumber-html-report"},
-		tags = {"@Test456"}
+		tags = {"@Test7"}
 		)
 public class RunTest
 {

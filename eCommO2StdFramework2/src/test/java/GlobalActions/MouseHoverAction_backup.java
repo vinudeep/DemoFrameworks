@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import helpers.Environment;
 
 
-public class MouseHoverAction extends Environment
+public class MouseHoverAction_backup extends Environment
 {
 	
    	 
@@ -87,7 +87,23 @@ public class MouseHoverAction extends Environment
 			  System.out.println("Performing PAYM SimO navigations");
 			  WebDriverWait wait = new WebDriverWait(driver, 15);
 			  
-			  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+			  if(wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id("edr_l_first"))) != null)
+			  {
+		 //  driver.switchTo().frame("edr_l_first");
+		  System.out.println("********We are switching to the iframe*******");
+    		//Saying no to survey
+    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
+    		System.out.println("*******Saying no to survey*******");
+    		System.out.println("*********Exiting the popups present in iframe***************");
+    		Environment.driver.switchTo().defaultContent();
+			  				  
+			  }
+			  else
+			  {
+				  return ;
+			  }
+			  
+	   		  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 	   		  Robot robot = new Robot();
 	   		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
 	   		 		  
@@ -107,14 +123,15 @@ public class MouseHoverAction extends Environment
 	    	catch(NoSuchElementException e)
 	    	{
 	    	//check if popup is present, if yes, handle it.
-	    		Environment.driver.switchTo().frame("edr_l_first"); 
+	    	/*	Environment.driver.switchTo().frame("edr_l_first"); 
 	    		System.out.println("********We are switch to the iframe*******");
 	    		//Saying no to survey
 	    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
 	    		System.out.println("*******Saying no to survey*******");
 	    		System.out.println("*********Exiting the popups present in iframe***************");
 	    		Environment.driver.switchTo().defaultContent();
-	    		    		
+	    	*/
+	    		
 	    		
 	    	}
 	    	
