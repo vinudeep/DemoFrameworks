@@ -16,7 +16,8 @@ import pageobjects.FitnessTrackerPage;
 import pageobjects.SmartwatchesPage;
 import pageobjects.TabletPage;
 
-public class ECOM_10136_Definition {
+public class ECOM_10136_Definition 
+{
 	public WebDriver driver;
 	  
 
