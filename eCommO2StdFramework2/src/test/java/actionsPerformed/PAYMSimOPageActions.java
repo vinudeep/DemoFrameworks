@@ -117,7 +117,7 @@ public static void Sorting(String elementName) throws InterruptedException {
 		
 		if(elementName.contains("promotionprimary"))
 		{
-			new Actions(driver);
+			Actions action = new Actions(driver);
 			 String colora = driver.findElement(By.xpath("//*[@id='2906f2c0-ac58-4e64-b199-e8d0c21b36df']/div[4]")).getCssValue("background-color");
 			 if (colora.equals(blueexpected)){
 			 System.out.println("Primary Promotion Element is in Blue colour as expected");} else
@@ -126,7 +126,7 @@ public static void Sorting(String elementName) throws InterruptedException {
 		
 		if(elementName.contains("promotionsecondary"))
 		{
-			new Actions(driver);
+			Actions action = new Actions(driver);
 			 String colora = driver.findElement(By.xpath("//*[@id='2906f2c0-ac58-4e64-b199-e8d0c21b36df']/div[5]")).getCssValue("background-color");
 			if (colora.equals(greenexpected)){
 			 System.out.println("Secondary Promotion Element is in Green colour as expected");} else
@@ -140,7 +140,7 @@ public static void charlengthcheck(String elementName , int elengthvalue) throws
 		
 		if(elementName.contains("promotionprimary"))
 		{
-			new Actions(driver);
+			Actions action = new Actions(driver);
 			 int alengthvalue = driver.findElement(By.xpath("//*[@id='2906f2c0-ac58-4e64-b199-e8d0c21b36df']/div[4]")).getText().length();
 			 		
 			 if (elengthvalue >= alengthvalue){
@@ -150,7 +150,8 @@ public static void charlengthcheck(String elementName , int elengthvalue) throws
 		
 		if(elementName.contains("promotionsecondary"))
 		{
-			new Actions(driver);
+			@SuppressWarnings("unused")
+			Actions action = new Actions(driver);
 			 int alengthvalue = driver.findElement(By.xpath("//*[@id='2906f2c0-ac58-4e64-b199-e8d0c21b36df']/div[5]")).getText().length();
 			 		
 			 if (elengthvalue >= alengthvalue){
@@ -196,9 +197,6 @@ public static void ElementClick2(String elementName) throws InterruptedException
 	  
 	 }
 	
-	
-	/*
-	
 	if(pageobjects.PAYMSimOPage.days30tab.getText().equalsIgnoreCase("30 days"))
 	 {
 		System.out.println("The 30 days_Tab is Present and the Text is :" +pageobjects.PAYMSimOPage.days30tab.getText());
@@ -232,7 +230,7 @@ public static void ElementClick2(String elementName) throws InterruptedException
 		System.out.println("Why choose an O2 Pay Monthly sim? - link is displayed");
 		//whychoosesimolink.click();
 
-		pageobjects.PAYMSimOPage.whychoosesimowrap.isDisplayed();
+		boolean variable1 = pageobjects.PAYMSimOPage.whychoosesimowrap.isDisplayed();
 
 		System.out.println("The Why choose simo wrap is displayed");
 		//System.out.println(variable1);
@@ -247,46 +245,46 @@ public static void ElementClick2(String elementName) throws InterruptedException
 	if (pageobjects.PAYMSimOPage.whychoosesimowrap.getText().equalsIgnoreCase("Why choose an O2 Pay Monthly sim?")) {
 		System.out.println("Why choose an O2 Pay Monthly sim? - section is displayed");
 
-		pageobjects.PAYMSimOPage.wifi_img.isDisplayed();
-		if (true) {
+		boolean wrap1 = pageobjects.PAYMSimOPage.wifi_img.isDisplayed();
+		if (wrap1 = true) {
 			System.out.println("Wifi image is displayed");
 		}
 
-		pageobjects.PAYMSimOPage.wifi_img_txt.isDisplayed();
-		if (true) {
+		boolean wrap1_txt = pageobjects.PAYMSimOPage.wifi_img_txt.isDisplayed();
+		if (wrap1_txt = true) {
 			System.out
 					.println("Save your data when you're out and about. With free O2 Wifi.- copytext is displayed");
 		}
 
-		pageobjects.PAYMSimOPage.keepyournumb_img.isDisplayed();
-		if (true) {
+		boolean wrap2 = pageobjects.PAYMSimOPage.keepyournumb_img.isDisplayed();
+		if (wrap2 = true) {
 			System.out.println("Keep your number image is displayed");
 		}
 
-		pageobjects.PAYMSimOPage.keepyournumb_img_txt.isDisplayed();
-		if (true) {
+		boolean wrap2_txt = pageobjects.PAYMSimOPage.keepyournumb_img_txt.isDisplayed();
+		if (wrap2_txt = true) {
 			System.out
 					.println("Save your data when you're out and about. With free O2 Wifi.- copytext is displayed");
 		}
 
-		pageobjects.PAYMSimOPage.rank_img.isDisplayed();
-		if (true) {
+		boolean wrap3 = pageobjects.PAYMSimOPage.rank_img.isDisplayed();
+		if (wrap3 = true) {
 			System.out.println("Rank image is displayed");
 		}
 
-		pageobjects.PAYMSimOPage.rank_img_txt.isDisplayed();
-		if (true) {
+		boolean wrap3_txt = pageobjects.PAYMSimOPage.rank_img_txt.isDisplayed();
+		if (wrap3_txt = true) {
 			System.out.println(
 					"We've been ranked No.1 for customer service by Ofcom, 7th time in a row.- copytext is displayed");
 		}
 
-		pageobjects.PAYMSimOPage.tugo_img.isDisplayed();
-		if (true) {
+		boolean wrap4 = pageobjects.PAYMSimOPage.tugo_img.isDisplayed();
+		if (wrap4 = true) {
 			System.out.println("Rank image is displayed");
 		}
 
-		pageobjects.PAYMSimOPage.tugo_img_txt.isDisplayed();
-		if (true) {
+		boolean wrap4_txt = pageobjects.PAYMSimOPage.tugo_img_txt.isDisplayed();
+		if (wrap4_txt = true) {
 			System.out.println(
 					"We've been ranked No.1 for customer service by Ofcom, 7th time in a row.- copytext is displayed");
 		}
@@ -294,77 +292,120 @@ public static void ElementClick2(String elementName) throws InterruptedException
 	} else
 		System.out.println("Why choose an O2 Pay Monthly sim? - section is not displayed ");
 
-	pageobjects.PAYMSimOPage.PromotionTariff.isDisplayed();
+	boolean tile = pageobjects.PAYMSimOPage.PromotionTariff.isDisplayed();
 
-	if (true) {
+	if (tile = true) {
 		System.out.println("Most popular/Recommended tariff tile is displayed");
 	}
 
-	pageobjects.PAYMSimOPage.tariff1tile.isDisplayed();
+	boolean tile1 = pageobjects.PAYMSimOPage.tariff1tile.isDisplayed();
 
-	System.out.println("First tariff tile is displayed");
+	if (tile1 = true) {
+		System.out.println("First tariff tile is displayed");
+	} else
+		System.out.println("First tariff tile not displayed");
 
-	pageobjects.PAYMSimOPage.tariff2tile.isDisplayed();
+	boolean tile2 = pageobjects.PAYMSimOPage.tariff2tile.isDisplayed();
 
-	System.out.println("Second tariff tile is displayed");
+	if (tile2 = true) {
+		System.out.println("Second tariff tile is displayed");
+	} else
+		System.out.println("Second tariff tile not displayed");
 
-	pageobjects.PAYMSimOPage.tariff3tile.isDisplayed();
+	boolean tile3 = pageobjects.PAYMSimOPage.tariff3tile.isDisplayed();
 
-	System.out.println("Third tariff tile is displayed");
+	if (tile3 = true) {
+		System.out.println("Third tariff tile is displayed");
+	} else
+		System.out.println("Third tariff tile not displayed");
 
-	pageobjects.PAYMSimOPage.tariff4tile.isDisplayed();
+	boolean tile4 =pageobjects.PAYMSimOPage.tariff4tile.isDisplayed();
 
-	System.out.println("Fourth tariff tile is displayed");
+	if (tile4 = true) {
+		System.out.println("Fourth tariff tile is displayed");
+	} else
+		System.out.println("Fourth tariff tile not displayed");
 	
-	pageobjects.PAYMSimOPage.tariff5tile.isDisplayed();
+	boolean tile5 = pageobjects.PAYMSimOPage.tariff5tile.isDisplayed();
 
-	System.out.println("Fifth tariff tile is displayed");
+	if (tile5 = true) {
+		System.out.println("Fifth tariff tile is displayed");
+	} else
+		System.out.println("Fifth tariff tile not displayed");
 	
-	pageobjects.PAYMSimOPage.tariff6tile.isDisplayed();
+	boolean tile6 = pageobjects.PAYMSimOPage.tariff6tile.isDisplayed();
 
-	System.out.println("Sixth tariff tile is displayed");
+	if (tile6 = true) {
+		System.out.println("Sixth tariff tile is displayed");
+	} else
+		System.out.println("Sixth tariff tile not displayed");
 	
-	pageobjects.PAYMSimOPage.tariff7tile.isDisplayed();
+	boolean tile7 = pageobjects.PAYMSimOPage.tariff7tile.isDisplayed();
 
-	System.out.println("Seven tariff tile is displayed");
+	if (tile7 = true) {
+		System.out.println("Seven tariff tile is displayed");
+	} else
+		System.out.println("Seven tariff tile not displayed");
 	
-	pageobjects.PAYMSimOPage.tariff8tile.isDisplayed();
+	boolean tile8 = pageobjects.PAYMSimOPage.tariff8tile.isDisplayed();
 
-	System.out.println("Eight tariff tile is displayed");
+	if (tile8 = true) {
+		System.out.println("Eight tariff tile is displayed");
+	} else
+		System.out.println("Eight tariff tile not displayed");
 	
 	
 
 	if (pageobjects.PAYMSimOPage.whyo2.getText().contains("Why O2?")) {
 		System.out.println("Why O2 section is displayed");
 
-		pageobjects.PAYMSimOPage.whyo2priority.isDisplayed();
+		boolean whyo2_1 = pageobjects.PAYMSimOPage.whyo2priority.isDisplayed();
 
-		System.out.println("Priority image is displayed");
+		if (whyo2_1 = true) {
+			System.out.println("Priority image is displayed");
+		} else
+			System.out.println("Priority image is not displayed");
 
-		pageobjects.PAYMSimOPage.whyo2priority_txt.isDisplayed();
+		boolean whyo2_2 =pageobjects.PAYMSimOPage.whyo2priority_txt.isDisplayed();
 
-		System.out.println("Priority copytext is displayed");
+		if (whyo2_2 = true) {
+			System.out.println("Priority copytext is displayed");
+		} else
+			System.out.println("Priority copytext is not displayed");
 		
-		pageobjects.PAYMSimOPage.whyo2guru.isDisplayed();
+		boolean whyo2_3 =pageobjects.PAYMSimOPage.whyo2guru.isDisplayed();
 
-		System.out.println("Guru image is displayed");
-
-		
-		pageobjects.PAYMSimOPage.whyo2guru_txt.isDisplayed();
-
-		System.out.println("Guru copytext is displayed");
-		
-		pageobjects.PAYMSimOPage.whyo2myo2.isDisplayed();
-
-		System.out.println("My O2 image is displayed");
+		if (whyo2_3 = true) {
+			System.out.println("Guru image is displayed");
+		} else
+			System.out.println("Guru image is not displayed");
 
 		
-		pageobjects.PAYMSimOPage.whyo2myo2_txt.isDisplayed();
+		boolean whyo2_4 =pageobjects.PAYMSimOPage.whyo2guru_txt.isDisplayed();
 
-		System.out.println("My O2 copytext is displayed");
+		if (whyo2_4 = true) {
+			System.out.println("Guru copytext is displayed");
+		} else
+			System.out.println("Guru copytext is not displayed");
+		
+		boolean whyo2_5 =pageobjects.PAYMSimOPage.whyo2myo2.isDisplayed();
+
+		if (whyo2_5 = true) {
+			System.out.println("My O2 image is displayed");
+		} else
+			System.out.println("My O2 image is not displayed");
+
+		
+		boolean whyo2_6 =pageobjects.PAYMSimOPage.whyo2myo2_txt.isDisplayed();
+
+		if (whyo2_6 = true) {
+			System.out.println("My O2 copytext is displayed");
+			return;
+		} else
+			System.out.println("My O2 copytext is not displayed");
 
 	}
-*/
+
 	
 }
 
@@ -497,7 +538,7 @@ public static void VerifyMinsDataDisplayed() throws IOException, InterruptedExce
 			System.out.println("Why choose an O2 Pay Monthly sim? - link is displayed");
 			
 
-			pageobjects.PAYMSimOPage.whychoosesimowrap.isDisplayed();
+			boolean variable1 = pageobjects.PAYMSimOPage.whychoosesimowrap.isDisplayed();
 
 			System.out.println("The Why choose simo wrap is displayed");
 			
