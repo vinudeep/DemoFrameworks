@@ -28,11 +28,11 @@ public class E2EOrderPlacedSimfree {
 	    }
 
 	    @When("^I Land on the basket page and click on \"([^\"]*)\" button$")
-	    public void i_Land_on_the_basket_page_and_click_on_button(String arg1) throws Throwable {
+	    public void i_Land_on_the_basket_page_and_click_on_button(String arg1) throws Throwable 
+	    {
 	        // Write code here that turns the phrase above into concrete actions
 	    	 PageFactory.initElements(driver, BasketPage.class);
 	    	 BasketPageActions.gotoCheckout();
-	    	     	     		
 	    }
 
 	    @When("^input all the fields on the Delivery page and Click on the 'Continue button'$")

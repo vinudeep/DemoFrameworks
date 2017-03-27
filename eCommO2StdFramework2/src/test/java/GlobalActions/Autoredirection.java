@@ -2,22 +2,15 @@ package GlobalActions;
 
 import org.openqa.selenium.WebDriver;
 
+import helpers.Environment;
+
 
 //Below is for redirecting the Url back to reference shop from live shop
 
-public class Autoredirection {
+public class Autoredirection  extends Environment {
 	
-  WebDriver driver;
-  
-  public Autoredirection(WebDriver Idriver)
-  {
-	  
-	  this.driver=Idriver;
-	  
-  }
-    
 	
-public void redirect(){
+public static void redirect(){
 		
 	String url=driver.getCurrentUrl();
 	int length = url.length();//length of url
