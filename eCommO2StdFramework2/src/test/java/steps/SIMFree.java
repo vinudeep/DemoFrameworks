@@ -38,12 +38,13 @@ public class SIMFree {
 	    }
 	@Given("^I am an eComm user$")
 	public void I_am_an_eComm_user() throws Throwable {
-		GlobalAction b1=new GlobalAction();
+/*		GlobalAction b1=new GlobalAction();
         String Currenturl= b1.ExecutionURL("TabletUrl");
 	      driver.get(Currenturl);
 		Environment.driver.findElement(By.xpath("(//a[contains(@href, 'https://www.o2.co.uk/shop/like-new/sim-free-phones')])[1]")).click();
 		
-    
+  */
+		
 	}
 	
 	
@@ -57,8 +58,7 @@ public class SIMFree {
 	Environment.driver.findElement(By.xpath("//input[@value='Add']")).sendKeys(Keys.ENTER);
     Thread.sleep(10000);
 	Environment.driver.findElement(By.xpath("//*[@id='qa-proceed-to-basket-dock-header']")).sendKeys(Keys.ENTER);
-    
-	}
+    	}
 
 	@Then("^I SHOULD be shown a 'Remove' CTA in front of the 'sim free device'$")
 	public void I_SHOULD_be_shown_a_Remove_CTA_in_front_of_the_sim_free_device() throws Throwable {
