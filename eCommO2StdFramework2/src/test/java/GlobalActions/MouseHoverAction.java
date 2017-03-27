@@ -85,8 +85,7 @@ public class MouseHoverAction extends Environment
 	    	{
 			  	
 			  System.out.println("Performing PAYM SimO navigations");
-			  WebDriverWait wait = new WebDriverWait(driver, 15);
-			  
+			  Thread.sleep(4000);
 			  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 	   		  Robot robot = new Robot();
 	   		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
