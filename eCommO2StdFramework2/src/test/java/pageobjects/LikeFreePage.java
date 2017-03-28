@@ -21,7 +21,8 @@ public class LikeFreePage extends BaseClass{
 	
 	@FindBy(how=How.XPATH,using=("(//a[contains(text(),'Pay Monthly')])[6]"))
 	public static WebElement Paym;
-		
+	
+	
 	@FindBy(how=How.XPATH,using=("(//a[contains(text(),'Pay As You Go')])[10]"))
 	public static WebElement PayG;
 	

@@ -1,5 +1,7 @@
 package actionsPerformed;
 
+import org.openqa.selenium.WebElement;
+
 public class TabletPageActions {
 
 	
@@ -46,6 +48,7 @@ public class TabletPageActions {
 
 	public static void ElementClickAction(String elementname) {
 		// TODO Auto-generated method stub
+		WebElement w1=null;
          System.out.println(" ");
 		
 		System.out.println("Tablet_Page_Action");
@@ -55,10 +58,10 @@ public class TabletPageActions {
 			switch (elementname.toLowerCase())
 			{
 			case "filter":
-				pageobjects.TabletPage.TabletFilterTab.click();
+				w1=pageobjects.TabletPage.TabletFilterTab;
 				break;
 			case "sort":
-				pageobjects.TabletPage.TabletSortTab.click();		
+				w1=pageobjects.TabletPage.TabletSortTab;		
 				break;	
 			
 			}
