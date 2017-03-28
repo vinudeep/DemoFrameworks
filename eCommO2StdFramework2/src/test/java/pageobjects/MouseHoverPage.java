@@ -45,6 +45,14 @@ public class MouseHoverPage extends BaseClass
 	//Below will click on the Tablets Tab
 	@FindBy(how=How.ID,using=("shop-simplicity-header-xxl"))
 	public static WebElement MoveMouseOnTablets;
+	
+	@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Upgrades')]"))
+	public static WebElement MouseMoveonUpgrade;
+	
+	@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Upgrade now')]"))
+	public static WebElement MouseMoveonUpgradeAndUpgradeNow;
+	
+	
 }
 
 
