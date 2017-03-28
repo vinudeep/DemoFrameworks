@@ -40,13 +40,7 @@ public class ECOM_10200 {
 	{
 	}
 
-	@When("^I land on the Pay monthly sims page$")
-	public void i_land_on_the_Pay_monthly_sims_page() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		//Assert.assertEquals(driver.getCurrentUrl(), "https://www.o2.co.uk/shop/sim-cards/sim-only-deals/#deviceType=phone&contractLength=P12M" );
-		PageFactory.initElements(driver, MouseHoverPage.class);
-		MouseHoverAction.PayMSimoNavigation();
-	}
+
 
 	@Then("^I should see (\\d+) tabs - Phone/Tablet and Mobile broadband$")
 	public void i_should_see_tabs_Phone_Tablet_and_Mobile_broadband(int arg1) throws Throwable {

@@ -150,7 +150,44 @@ public class MouseHoverAction extends Environment
 	  	  
 	  //Below will navigate to ACCESSORIES Page
   
+// Below will navigate to upgrade --- > upgrade now page
+	  
+	  public static void UpgradeandUpgradeNow() throws InterruptedException, AWTException 
+		 {
+			  
+				try
+		    	{
+			  System.out.println("Performing Like New navigations");
+			  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+			  Robot robot = new Robot();
+			  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
+			 		  
+			  Actions action = new Actions(driver);
+			  action.moveToElement(pageobjects.MouseHoverPage.MouseMoveonUpgrade).build().perform();
+			  Thread.sleep(2000);
+			  action.moveToElement(pageobjects.MouseHoverPage.MouseMoveonUpgradeAndUpgradeNow).build().perform();
+			  Thread.sleep(2000);
+			  pageobjects.MouseHoverPage.MouseMoveonUpgradeAndUpgradeNow.click();
 
+			  //Move mouse pointer away from location
+			  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+			  Robot robot2 = new Robot();
+			  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+		    	}
+		    	catch(ElementNotVisibleException e)
+		    	{
+		    	//check if popup is present, if yes, handle it.
+		    		Environment.driver.switchTo().frame("edr_l_first"); 
+		    		System.out.println("********We are switch to the iframe*******");
+		    		//Saying no to survey
+		    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
+		    		System.out.println("*******Saying no to survey*******");
+		    		System.out.println("*********Existing the popups present in iframe***************");
+		    		Environment.driver.switchTo().defaultContent();
+		    	}
+				
+		  }
+	  
  
 }
 
