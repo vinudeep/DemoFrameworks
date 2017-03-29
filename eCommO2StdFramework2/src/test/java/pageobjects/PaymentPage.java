@@ -61,6 +61,13 @@ public class PaymentPage extends BaseClass{
 	  @FindBy(how=How.ID,using="btnPayNow") 
 	  public static WebElement Continue_Next_Step;
 	    
+	  @FindBy(how=How.XPATH,using="//tbody/tr[2]/td[2]/b/input[1]") 
+		public static WebElement checkoutPassword;
+		
+	  
+	  @FindBy(how=How.XPATH,using="//tbody/tr[4]/td[2]/b/input") 
+		public static WebElement CheckoutSubmitbutton;
+		
 	  
 	  
 }

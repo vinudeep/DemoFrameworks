@@ -12,13 +12,13 @@ import pageobjects.Like_Free_POM;
 import pageobjects.Sim_Free_Phone_POM;
 import pageobjects.Sim_Free_Tariff_Extras_page_POM;
 
-public class Sim_Free_Acquisition_Journey_definition {
+public class ECOM_10241_Step_Definition {
 	
 	 public WebDriver driver;
 	   
 
 
-	    public Sim_Free_Acquisition_Journey_definition() {
+	    public ECOM_10241_Step_Definition() {
 	        driver = Hooks.driver;
 	       
 	    }

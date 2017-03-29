@@ -14,14 +14,7 @@ import org.openqa.selenium.support.How;
 
 public class PAYMSimOPage {
 
-	WebDriver driver;
-
-	public PAYMSimOPage(WebDriver Idriver) {
-
-		this.driver = Idriver;
-
-	}
-
+	
 //	@FindBy(how=How.XPATH,using="//*[@id='pn1']/a/dl/dt") 
 //	public static WebElement shomhome;
 	
@@ -189,6 +182,8 @@ public class PAYMSimOPage {
 	
 	@FindBy(how=How.CSS,using=(".col-xs-12.promotion-ribbon"))
 	public static WebElement PromotionTariff;
+	
+	
 
 	
 }

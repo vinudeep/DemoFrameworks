@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 
+import GlobalActions.RandomEmailAddressCreation;
 import helpers.*;
 import steps.Hooks;
 import pageobjects.*;
@@ -37,11 +38,11 @@ public class DeliveryPageActions {
 		
 		public static void AboutYou()
 		{
-			pageobjects.DeliveryPage.Email_Address.sendKeys("mishrashaman@gmail.com");
+			RandomEmailAddressCreation.RandomEmail();
 			Select dropdown = new Select(pageobjects.DeliveryPage.Title);
 			dropdown.selectByIndex(2);
-			pageobjects.DeliveryPage.First_Name.sendKeys("Shaman");
-			pageobjects.DeliveryPage.Last_Name.sendKeys("Mishra");
+			pageobjects.DeliveryPage.First_Name.sendKeys("TEST");
+			pageobjects.DeliveryPage.Last_Name.sendKeys("ACCEPTA");
 			pageobjects.DeliveryPage.Contact_Number.sendKeys("07829483426");
 			pageobjects.DeliveryPage.Password.sendKeys("NTTDATA123");
 			pageobjects.DeliveryPage.security_answer.sendKeys("vodafone");

@@ -15,13 +15,13 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class Sim_Free_pacakge_Definition {
+public class ECOM_10388_Step_Definition {
 	
 	 public WebDriver driver;
 	   
 
 
-	    public Sim_Free_pacakge_Definition() {
+	    public ECOM_10388_Step_Definition() {
 	        driver = Hooks.driver;
 	       
 	    }

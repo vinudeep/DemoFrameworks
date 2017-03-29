@@ -1,6 +1,6 @@
  Feature: Tablet_MBB tab  - eComm10210 
  
-   @Regression
+   @Regression123123
    Scenario: Tablet Tab.
    Given I am an eComm test user02 in o2
     When I choose Sims and Pay Monthly sims

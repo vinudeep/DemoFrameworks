@@ -30,8 +30,10 @@ public class ECOM_10392_E2EOrderPlacedSimfree_Step_Definition {
 	    public void i_am_an_eComm_user(int arg1) throws Throwable {
 	        // Write code here that turns the phrase above into concrete actions
 	    	   GlobalAction b1=new GlobalAction();
+	    	   //comment by shaman
 	           String Currenturl= b1.ExecutionURL("reflikebewurl");
-	  	      driver.get(Currenturl);
+	          // String Currenturl= b1.ExecutionURL("Testurl");
+	  	       driver.get(Currenturl);
 	    }
 
 	    @When("^I choose 'like new' sim free device$")
@@ -81,19 +83,41 @@ public class ECOM_10392_E2EOrderPlacedSimfree_Step_Definition {
 	    public void i_land_on_the_payment_page_and_input_all_the_details_and_click_Continue_on_next_step() throws Throwable {
 	        // Write code here that turns the phrase above into concrete actions
 	    	PageFactory.initElements(driver,PaymentPage.class);
-	    	 PaymentPageActions.Set_Bank_details();
+	    	PaymentPageActions.Set_Bank_details();
 	    	 Thread.sleep(10000);
-	    	
+	    	 PaymentPageActions.Time_At_Address();
+	    	 Thread.sleep(4000);
+	    	 PaymentPageActions.Card_Details();
+	    	 Thread.sleep(10000);
+	    	 driver.switchTo().defaultContent();
 	    	 
-	    	
-	    	// PaymentPageActions.Card_Details();
-	    	 Thread.sleep(10000);
 	    }
 
 	    @When("^perform an End to End operation$")
 	    public void perform_an_End_to_End_operation() throws Throwable {
 	        // Write code here that turns the phrase above into concrete actions
-	        
+	    	
+	  	      
+	  	    	/*PageFactory.initElements(driver,AgreementPage.class);
+	  	    	AgreementPageActions.gettitlepage();
+	  	    	AgreementPageActions.Affordability();
+	  	    	AgreementPageActions.KeyInformation();
+	  	    	AgreementPageActions.secciSection();
+	  	    	AgreementPageActions.PayMMobileAgreement(); 
+	  	    	AgreementPageActions.TermsDeclarationCheckbox(); 
+	  	    	Thread.sleep(5000);*/
+	  	    	PageFactory.initElements(driver,ReviewPage.class);
+	  	    	ReviewPageActions.gettitlepage();
+	  	    	ReviewPageActions.TermsCheckBox();
+	  	    	ReviewPageActions.PayNow();
+	  	    	Thread.sleep(5000);
+	  	    	PageFactory.initElements(driver,OrderConfirmationPage.class);
+	  	    	OrderConfirmationPageActions.gettitlepage();
+	  	    	OrderConfirmationPageActions.MessageDisplayed();
+	  	    	
 
 }
+	    
+	    
+	    
 }

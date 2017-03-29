@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import actionsPerformed.GlobalAction;
+import actionsPerformed.PAYMSimOPageActions;
 import pageobjects.*;
 import helpers.*;
 import cucumber.api.PendingException;
@@ -43,10 +44,17 @@ public class ECOM_10202_Promotional_Ribbons_Step_Definition {
 	public void i_want_to_promote_any_offer_for_a_particular_sim_only_on_the_paymonthly_sims_page() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		Thread.sleep(5000);
+		
 		Shop_home_page_Model p1=PageFactory.initElements(driver, Shop_home_page_Model.class);
 		p1.ElementClick1("shomhome");
 		p1.ElementClick1("shopsims");
 		p1.ElementClick1("shopsimspaymsims");
+		
+	/*	Thread.sleep(5000);
+		PageFactory.initElements(driver, PAYMSimOPage.class);
+		PAYMSimOPageActions.ElementClick1("shomhome");
+		PAYMSimOPageActions.ElementClick1("shopsims");
+		PAYMSimOPageActions.ElementClick1("shopsimspaymsims");*/
 	}
 
 	@Then("^I should be able to do so using the green and blue ribbon as per the given designs$")
@@ -57,11 +65,22 @@ public class ECOM_10202_Promotional_Ribbons_Step_Definition {
 		p2.ElementColour("promotionprimary","blue");
 		p2.Elementverify("promotionsecondary");
 		p2.ElementColour("promotionsecondary","green");
+		
+		/*PageFactory.initElements(driver, PAYMSimOPage.class);
+		PAYMSimOPageActions.Elementverify("promotionprimary");
+		PAYMSimOPageActions.ElementColour("promotionprimary","blue");
+		PAYMSimOPageActions.Elementverify("promotionsecondary");
+		PAYMSimOPageActions.ElementColour("promotionsecondary","green");*/
 	}
 
 	@Then("^I should be able to see only (\\d+) characters on the Ribbon$")
 	public void i_should_be_able_to_see_only_characters_on_the_Ribbon(int arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
+		/*PageFactory.initElements(driver, PAYMSimOPage.class);
+		PAYMSimOPageActions.charlengthcheck("promotionprimary",arg1);
+		PAYMSimOPageActions.charlengthcheck("promotionsecondary",arg1);*/
+		
+		
 		Shop_home_page_Model p3=PageFactory.initElements(driver, Shop_home_page_Model.class);
 		p3.charlengthcheck("promotionprimary",arg1);
 		p3.charlengthcheck("promotionsecondary",arg1);

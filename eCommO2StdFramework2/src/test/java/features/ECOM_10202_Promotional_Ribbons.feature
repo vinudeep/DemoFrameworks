@@ -1,6 +1,6 @@
 Feature: Promotional Ribbon eComm10202
 
-  @Regression
+  @Regression1wwee
   Scenario: Promotional Ribbon.
     Given that I am a merchandising manager of o2
     When I want to promote any offer for a particular sim-only on the paymonthly sims page

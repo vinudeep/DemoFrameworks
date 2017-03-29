@@ -12,11 +12,13 @@ import org.testng.Assert;
 
 import actionsPerformed.GlobalAction;
 import actionsPerformed.MouseSimfreeLandingActions;
+import actionsPerformed.PAYMSimOPageActions;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import helpers.DataHelper;
+import pageobjects.PAYMSimOPage;
 import pageobjects.PayMsimspage;
 
 public class ECOM_10200_Step_Definition {
@@ -71,8 +73,13 @@ public class ECOM_10200_Step_Definition {
 	@And("^the \"([^\"]*)\" tab should be open by default$")
 	public void the_tab_should_be_open_by_default(String arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		PayMsimspage p2=PageFactory.initElements(driver, PayMsimspage.class);
-		Assert.assertTrue(p2.ElementEnable());;
+		//vinudeep updated in 28 march 2017
+		PageFactory.initElements(driver, PAYMSimOPage.class);
+		PAYMSimOPageActions.ElementEnable();
+		
+		//Commented by shaman
+		//PayMsimspage p2=PageFactory.initElements(driver, PayMsimspage.class);
+		//Assert.assertTrue(p2.ElementEnable());;
 	}
 
 	@When("^I click on the Phone tab$")

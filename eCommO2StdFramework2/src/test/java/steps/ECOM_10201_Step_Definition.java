@@ -8,11 +8,13 @@ import org.openqa.selenium.support.PageFactory;
 import actionsPerformed.Autoredirection;
 import actionsPerformed.GlobalAction;
 import actionsPerformed.MouseHoverAction;
+import actionsPerformed.PAYMSimOPageActions;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import pageobjects.PAYMSimOPage;
 import pageobjects.PayMsimspage;
 
 public class ECOM_10201_Step_Definition {
@@ -49,21 +51,33 @@ public class ECOM_10201_Step_Definition {
         // For automatic transformation, change DataTable to one of
         // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
         // E,K,V must be a scalar (String, Integer, Date, enum etc)
-    	PayMsimspage p1=PageFactory.initElements(driver, PayMsimspage.class);
+    	//old code commented by shaman
+    	/*PayMsimspage p1=PageFactory.initElements(driver, PayMsimspage.class);
 		for (int i=0; i < Links.size(); i++)
 		{
 			System.out.println(Links.get(i));
 		}
 		p1.VerifyMinsDataDisplayed();
-		p1.VerifyCostDisplayed();
+		p1.VerifyCostDisplayed();*/
+		
+		PageFactory.initElements(driver, PAYMSimOPage.class);
+		for (int i=0; i < Links.size(); i++)
+		{
+			System.out.println(Links.get(i));
+		}
+		PAYMSimOPageActions.VerifyMinsDataDisplayed();
+		PAYMSimOPageActions.VerifyCostDisplayed();
+		
     }
 
     @And("^'Buy now' CTA links straight to the basket page\\.$")
     public void buy_now_CTA_links_straight_to_the_basket_page() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-PayMsimspage p2=PageFactory.initElements(driver, PayMsimspage.class);
-		
-	    p2.BuyNowButtonValidation();
+        //old code commented by shaman
+    	//PayMsimspage p2=PageFactory.initElements(driver, PayMsimspage.class);		
+	    //p2.BuyNowButtonValidation();
+        PageFactory.initElements(driver, PAYMSimOPage.class);
+		PAYMSimOPageActions.BuyNowButtonValidation();
     }
 
     @And("^'Check box' A check box to be displayed with the below details \"([^\"]*)\"$")
@@ -71,6 +85,8 @@ PayMsimspage p2=PageFactory.initElements(driver, PayMsimspage.class);
         // Write code here that turns the phrase above into concrete actions
     	/*PayMsimspage p3=PageFactory.initElements(driver, PayMsimspage.class);
 		p3.CheckboxValidation();*/
+    	//PageFactory.initElements(driver, PAYMSimOPage.class);
+		//PAYMSimOPageActions.CheckboxValidation();
     }
 
     @And("^If customer does not select this check box, then the selection is considered as Smartphone$")

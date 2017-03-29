@@ -1,6 +1,6 @@
  Feature: Automation ecomm10235,ecomm10236, ecomm10382.
 
-@Regression
+@Regression12344555
 Scenario: CFA Validating  Most Recommended feature in PAYM simonly page
 Given that I am a CFA Pay Monthly SIMO Customer
 Then I should be able to see the "recommended" tariff on the PAYM sims page 

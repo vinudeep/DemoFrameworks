@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
@@ -15,11 +16,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import helpers.Environment;
 import pageobjects.PAYMSimOPage.*;
 
 public class PAYMSimOPageActions extends Environment {
+	
 	
 public static void ElementClick1(String elementName) throws InterruptedException, AWTException {
 			
@@ -553,6 +557,9 @@ public static void VerifyMinsDataDisplayed() throws IOException, InterruptedExce
 	public static void DisplayPromotionTariff(String elementName) throws InterruptedException 
 	{
 	
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".col-xs-12.promotion-ribbon")));// instead of id u can use cssSelector or xpath of ur element.
+
 	System.out.println("Displaying the Promotion tarriff as per page");
 	
 	String var1="Recommended";
@@ -576,10 +583,13 @@ public static void VerifyMinsDataDisplayed() throws IOException, InterruptedExce
 	}
 	
 	
-	public static void LengthPromotionTariff(int arg1) throws InterruptedException 
+	public static void LengthPromotionTariff(String arg1) throws InterruptedException 
 	{
 	
-	System.out.println("Trying to find the Lenght the Promotion tarriff as per page");
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".col-xs-12.promotion-ribbon")));// instead of id u can use cssSelector or xpath of ur element.
+
+		System.out.println("Trying to find the Lenght the Promotion tarriff as per page");
 	
 	String PromotionDisplayed=driver.findElement(By.cssSelector(".col-xs-12.promotion-ribbon")).getText();
 	int LengthofPromotion=PromotionDisplayed.length();
@@ -588,10 +598,14 @@ public static void VerifyMinsDataDisplayed() throws IOException, InterruptedExce
 				
 	
 	//Below is to determine the number of characters in the section
+	Dimension PromotionDisplayed2=driver.findElement(By.cssSelector(".col-xs-12.promotion-ribbon")).getSize();
+	System.out.println("The size is "+PromotionDisplayed2);
+	
+	
 	}
 	
-
-	public static void TabSelect(int arg1) throws InterruptedException, IOException
+/*
+	public static void TabSelect(String arg1) throws InterruptedException, IOException
 	{
 	
 	System.out.println("Differnt Tabs present in page");
@@ -601,7 +615,7 @@ public static void VerifyMinsDataDisplayed() throws IOException, InterruptedExce
 		List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@class='tab-container']"));
 
 		@SuppressWarnings("unchecked")
-		List<WebElement> DataContainer = (List<WebElement>) outercontainer.get(0).findElement(By.cssSelector(".active"));
+		List<WebElement> DataContainer = (List<WebElment>) outercontainer.get(0).findElement(By.cssSelector(".active"));
 			        
 			      
 			        for (int i=0; i<=DataContainer.size();i++)
@@ -614,14 +628,34 @@ public static void VerifyMinsDataDisplayed() throws IOException, InterruptedExce
 		catch (IndexOutOfBoundsException e) {
 			
 		}
-		
+	
 		        			
 	
 	}
 	        
+*/
+	public static void TariffTilePosition() throws InterruptedException 
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".col-xs-12.promotion-ribbon")));// instead of id u can use cssSelector or xpath of ur element.
 
+	System.out.println("Trying to find the if the promotion tile is displayed at top");
+	String elementName=driver.findElement(By.xpath("//*[@id='contentWrapper']/div[3]/div/div[6]/div[7]")).getText();
+	
+	if(elementName.contains("Recommended"))
+	{
+		if(driver.findElements(By.xpath("//*[@id='contentWrapper']/div[3]/div/div[6]/div[7]")).size() != 0){
+			System.out.println("The first tile is displayed as recommended");
+			}else{
+			System.out.println("The first tile is not displayed as recommended");
+			}
+		
+	
+	}
+	}
+	
 
-	    }
+}
 
 
 
