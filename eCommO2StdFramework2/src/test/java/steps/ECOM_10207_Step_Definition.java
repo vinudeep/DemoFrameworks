@@ -1,6 +1,5 @@
 package steps;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -8,15 +7,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import actionsPerformed.BasketPageActions;
 import actionsPerformed.GlobalAction;
 import actionsPerformed.LikefreeHomepageAction;
 import actionsPerformed.SimFreeDevicePageActions;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import helpers.DataHelper;
-import junit.framework.Assert;
 import pageobjects.LikeFreePage;
 import pageobjects.SimFreeDevicePage;
 
@@ -51,12 +47,9 @@ public class ECOM_10207_Step_Definition {
 	    
 	}
 
-	@SuppressWarnings("deprecation")
 	@Then("^on landing of the Pay monthly sims page, the default order of the tariffs from the tile below the promoted white tile should be from High to low data$")
 	public void on_landing_of_the_Pay_monthly_sims_page_the_default_order_of_the_tariffs_from_the_tile_below_the_promoted_white_tile_should_be_from_High_to_low_data() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		String[] stringArray;
-		try{
+	    try{
 			List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@id='tariff-tile']"));
 
 			  // =====================================

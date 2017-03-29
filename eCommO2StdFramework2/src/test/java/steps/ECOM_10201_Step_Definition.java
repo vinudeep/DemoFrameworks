@@ -5,17 +5,14 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import actionsPerformed.Autoredirection;
 import actionsPerformed.GlobalAction;
-import actionsPerformed.MouseHoverAction;
 import actionsPerformed.PAYMSimOPageActions;
-import cucumber.api.DataTable;
+
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+
 import pageobjects.PAYMSimOPage;
-import pageobjects.PayMsimspage;
 
 public class ECOM_10201_Step_Definition {
 	public WebDriver driver;

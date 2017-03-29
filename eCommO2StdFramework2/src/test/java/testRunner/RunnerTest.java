@@ -7,10 +7,8 @@ import com.github.mkolisnyk.cucumber.reporting.CucumberResultsOverview;
 
 import cucumber.api.CucumberOptions;
 
-import org.apache.log4j.PropertyConfigurator;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
 
 import java.io.File;
 import java.util.HashMap;
@@ -18,7 +16,7 @@ import java.util.Map;
 
 @CucumberOptions(
 		features = {"src//test//java//features"}, glue = {"steps"},
-		tags = {"@Regression,@smokeTest"}, format = {"json:testResult/cucumber.json", "pretty", "html:testResult/report"},
+		tags = {""}, format = {"json:testResult/cucumber.json", "pretty", "html:testResult/report"},
 		plugin = {"com.cucumber.listener.ExtentCucumberFormatter"}
 		)
 
@@ -30,6 +28,7 @@ import java.util.Map;
 
 @RunWith(CucumberRunner.class)
 public class RunnerTest {
+	@SuppressWarnings("unchecked")
 	@BeforeClass
 	public static void setUp(){
 		
@@ -40,6 +39,7 @@ public class RunnerTest {
 		ExtentCucumberFormatter.addSystemInfo("Browser version", "v31.0");
 		ExtentCucumberFormatter.addSystemInfo("Selenium version", "v2.53.0");
 
+		@SuppressWarnings("rawtypes")
 		Map systemInfo = new HashMap();
 		systemInfo.put("Cucumber version", "v1.2.3");
 		systemInfo.put("Environment", "QA");
