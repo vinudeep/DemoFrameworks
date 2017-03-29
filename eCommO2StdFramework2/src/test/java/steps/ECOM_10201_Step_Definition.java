@@ -85,8 +85,8 @@ public class ECOM_10201_Step_Definition {
         // Write code here that turns the phrase above into concrete actions
     	/*PayMsimspage p3=PageFactory.initElements(driver, PayMsimspage.class);
 		p3.CheckboxValidation();*/
-    	//PageFactory.initElements(driver, PAYMSimOPage.class);
-		//PAYMSimOPageActions.CheckboxValidation();
+    	PageFactory.initElements(driver, PAYMSimOPage.class);
+		PAYMSimOPageActions.CheckboxValidation();
     }
 
     @And("^If customer does not select this check box, then the selection is considered as Smartphone$")

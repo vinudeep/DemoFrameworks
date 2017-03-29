@@ -534,6 +534,7 @@ public static void VerifyMinsDataDisplayed() throws IOException, InterruptedExce
 
 		if (pageobjects.PAYMSimOPage.simmbbtab.getText().contains("Mobile broadband"))
 			System.out.println("Mobile broadband tab is displayed");
+		
 		else
 			System.out.println("Mobile broadband is not displayed");
 
