@@ -1,4 +1,6 @@
-Feature: Validating Paymonthly Sim free Page.
+#Validating Paymonthly Sim free Page.having 3 Test Cases
+
+Feature: ECOM_10200 
 @Regression
   Scenario: Phones tab validation
     Given that I am a acquisition/upgrade customer

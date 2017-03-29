@@ -1,5 +1,5 @@
-#Sample Feature Definition Template ECOM-10243 & ECOM-10253 having 8 test cases
-Feature: Validation of the Remove CTA feature
+#Sample Feature Definition Template having 8 test cases
+Feature: ECOM-10243,ECOM-10253 
 
   @smokeTest
   Scenario: Flow of SIM Free with any accessory

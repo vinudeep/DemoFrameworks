@@ -1,6 +1,7 @@
-Feature: Horizontal Tariff Structure Inner modules eCom10201
+#Horizontal Tariff Structure Inner modules having 2 Test cases
+Feature: ECOM_10201  
 
-  @smokeTest12e
+  @smokeTest
   Scenario: Horizontal Tariff Structure - Inner modules
     Given that I am a acquisition customer
     When I land on the Pay monthly sims page

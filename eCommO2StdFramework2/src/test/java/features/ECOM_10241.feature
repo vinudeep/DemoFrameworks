@@ -1,6 +1,8 @@
-Feature: Sim_Free_Acquisition_validation.
+#Sim_Free_Acquisition_validation.having 4 Test Cases
 
-  @Regression
+Feature: ECOM_10241 
+
+  @smokeTest
   Scenario: Sim_Free_Acquisition_Journey
     Given I am an eComm user12 in Acquisition
     When I choose 'like new' sim free device"Device_only_sim_free_Select"
@@ -9,7 +11,7 @@ Feature: Sim_Free_Acquisition_validation.
     Then I SHOULD be able to see both 12 month and 30 days tab just above the tariffs tile on the right hand side, to select the associated Pay monthly tariffs with a text 'Contract length' at the right hand side
     And Remove copy 'Contract length is 12 months..
 
-  @Regression
+  @smokeTest
   Scenario: Sim_Free_Acquisition_PayM_Journey
     Given I am an eComm user12 in Acquisition
     When I choose 'like new' sim free device"PayM_sim_free_Select"
@@ -22,7 +24,7 @@ Feature: Sim_Free_Acquisition_validation.
     Then I SHOULD be presented with all 30 days Pay monthly tariffs
     And Remove copy 'Contract length is 12 months..
 
-  @Regression
+  @smokeTest
   Scenario: Sim_Free_Journey_with_tab_Select
     Given I am an eComm user12 in Acquisition
     When I choose 'like new' sim free device"Device_only_sim_free_Select"
@@ -37,7 +39,7 @@ Feature: Sim_Free_Acquisition_validation.
     Then I SHOULD be presented with all 12 months Pay monthly tariffsss
     And Remove copy 'Contract length is 12 months..
 
-  @Regression
+  @smokeTest
   Scenario: validation_of_the_label
     Given I am an eComm user12 in Acquisition
     When I choose 'like new' sim free device"Device_only_sim_free_Select"

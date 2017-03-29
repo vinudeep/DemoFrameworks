@@ -1,6 +1,8 @@
- Feature: Automation eComm10099 
+#having 1 Test case
 
-@smokeTest12345
+ Feature: ECOM_10099 
+
+@smokeTest
 Scenario: CFA Validating  Most Recommended feature in PAYM simonly page
 Given that I am a CFA Pay Monthly SIMO Customer
 Then I should be able to see the "recommended" tariff on the PAYM sims page 

@@ -1,6 +1,8 @@
-Feature: Simo_Journey_order_placed
+#Simo_Journey_order_placed  having 1 Test Case
 
-  @smokeTest11111
+Feature: ECOM_10392
+
+  @smokeTest
   Scenario: Simo journey order.
     Given I am an eComm user12
     When I choose 'like new' sim free device

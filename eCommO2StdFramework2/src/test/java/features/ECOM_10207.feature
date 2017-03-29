@@ -1,6 +1,7 @@
-Feature: Ecom_10207 Tarrif Decending order validation. 
+#Tarrif Decending order validation.  having 1 Test Case
+Feature: Ecom_10207 
 
-  @Regressioncdcdcdc
+  @smokeTest
   Scenario: Validate the tarrif containing in the decending order
     Given that I am a merchandising manager
     When I am deciding the order of the pay-monthly sim tariffs

@@ -105,7 +105,7 @@ public class ECOM_10392_E2EOrderPlacedSimfree_Step_Definition {
 	  	    	AgreementPageActions.secciSection();
 	  	    	AgreementPageActions.PayMMobileAgreement(); 
 	  	    	AgreementPageActions.TermsDeclarationCheckbox(); 
-	  	    	Thread.sleep(5000);*/
+	  	    	Thread.sleep(5000);
 	  	    	PageFactory.initElements(driver,ReviewPage.class);
 	  	    	ReviewPageActions.gettitlepage();
 	  	    	ReviewPageActions.TermsCheckBox();
@@ -113,7 +113,7 @@ public class ECOM_10392_E2EOrderPlacedSimfree_Step_Definition {
 	  	    	Thread.sleep(5000);
 	  	    	PageFactory.initElements(driver,OrderConfirmationPage.class);
 	  	    	OrderConfirmationPageActions.gettitlepage();
-	  	    	OrderConfirmationPageActions.MessageDisplayed();
+	  	    	OrderConfirmationPageActions.MessageDisplayed();*/
 	  	    	
 
 }
