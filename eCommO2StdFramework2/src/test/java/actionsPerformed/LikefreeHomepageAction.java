@@ -9,10 +9,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import helpers.Environment;
 
 
-@SuppressWarnings("unused")
-public class LikefreeHomepageAction {
+
+public class LikefreeHomepageAction extends Environment {
 
 
 	public static void ElementClick(String elementName) {

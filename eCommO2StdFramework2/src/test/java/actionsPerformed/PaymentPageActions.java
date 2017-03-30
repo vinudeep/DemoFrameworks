@@ -10,15 +10,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import helpers.BaseClass;
 import helpers.DataHelper;
-import pageobjects.BaseClass;
+import helpers.Environment;
 import steps.Hooks;
 
-public class PaymentPageActions extends BaseClass {
-	public PaymentPageActions(WebDriver driver)
-	{
-		super(driver);
-	}
+public class PaymentPageActions extends Environment {
+	
 		  
 	  public static void Set_Bank_details()
 	  {
@@ -50,7 +48,7 @@ public class PaymentPageActions extends BaseClass {
 		WebElement fr = driver.findElement(By.id("payment-iframe"));
 
 		  driver.switchTo().frame(fr);
-Thread.sleep(5000);
+		  Thread.sleep(5000);
 		  
 		  pageobjects.PaymentPage.Name_On_Card.sendKeys("Test Accepta");
 		  pageobjects.PaymentPage.Card_Number.sendKeys("4539791001730106");

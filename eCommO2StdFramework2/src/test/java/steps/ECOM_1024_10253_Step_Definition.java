@@ -4,7 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
+import GlobalActions.MouseHoverAction;
 import actionsPerformed.GlobalAction;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -12,6 +14,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import helpers.Environment;
 import helpers.Filereadingutility;
+import pageobjects.MouseHoverPage;
 
 public class ECOM_1024_10253_Step_Definition {
 	public WebDriver driver;
@@ -30,11 +33,13 @@ public class ECOM_1024_10253_Step_Definition {
 	
     @Given("^I am an eComm user$")
 	public void I_am_an_eComm_user() throws Throwable {
-		GlobalAction b1=new GlobalAction();
+		/*GlobalAction b1=new GlobalAction();
         String Currenturl= b1.ExecutionURL("likenewurl");
 	      driver.get(Currenturl);
 		Environment.driver.findElement(By.xpath("(//a[contains(@href, 'https://www.o2.co.uk/shop/like-new/sim-free-phones')])[1]")).click();
-		
+		*/
+		PageFactory.initElements(driver, MouseHoverPage.class);
+		MouseHoverAction.likeNewHomepageNavigation();
     
 	}
 	

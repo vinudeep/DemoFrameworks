@@ -23,10 +23,12 @@ public class ExtentCucumberFormatter implements Reporter, Formatter {
     private ExtentTest scenarioTest;
     private LinkedList<Step> testSteps = new LinkedList<Step>();
     private static File htmlReportDir;
-    private static Map systemInfo;
+    @SuppressWarnings("rawtypes")
+	private static Map systemInfo;
     private boolean scenarioOutlineTest;
 
-    private static final Map<String, String> MIME_TYPES_EXTENSIONS = new HashMap() {
+    @SuppressWarnings({ "unchecked", "serial", "rawtypes" })
+	private static final Map<String, String> MIME_TYPES_EXTENSIONS = new HashMap() {
         {
             this.put("image/bmp", "bmp");
             this.put("image/gif", "gif");
@@ -37,7 +39,8 @@ public class ExtentCucumberFormatter implements Reporter, Formatter {
         }
     };
 
-    public ExtentCucumberFormatter(File filePath) {
+    @SuppressWarnings("static-access")
+	public ExtentCucumberFormatter(File filePath) {
         if (!filePath.getPath().equals("")) {
             String reportPath = filePath.getPath();
             this.htmlReportDir = new File(reportPath);
@@ -224,7 +227,8 @@ public class ExtentCucumberFormatter implements Reporter, Formatter {
     public void done() {
     }
 
-    public void close() {
+    @SuppressWarnings("unchecked")
+	public void close() {
         extent.addSystemInfo(systemInfo);
         extent.close();
     }
@@ -234,7 +238,8 @@ public class ExtentCucumberFormatter implements Reporter, Formatter {
         extent.flush();
     }
 
-    private OutputStream reportFileOutputStream(String fileName) {
+    @SuppressWarnings("static-access")
+	private OutputStream reportFileOutputStream(String fileName) {
         try {
             return new URLOutputStream(new URL(this.htmlReportDir.toURI().toURL(), fileName));
         } catch (IOException var3) {

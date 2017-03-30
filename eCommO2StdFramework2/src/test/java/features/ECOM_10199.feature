@@ -1,8 +1,8 @@
 #Sort Order For PAYM Sims Tariffs having 1 Test Case 
 
-Feature: ECOM_10199 
+Feature: ECOM10199 
 
-  @smokeTest
+  @smokeTestECOM10199
   Scenario: This scenario ensures that the default order of the tariff tiles is high to low
     Given I am an eComm user01 in o2
     When I am deciding the order of the pay-monthly sim tariffsss

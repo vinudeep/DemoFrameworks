@@ -1,8 +1,8 @@
 #Promotional Ribbon eComm10202 having 1 Test case
 
-Feature: ECOM_10202 
+Feature: ECOM10202 
 
-  @smokeTest
+  @smokeTestECOM10202
   Scenario: Promotional Ribbon.
     Given that I am a merchandising manager of o2
     When I want to promote any offer for a particular sim-only on the paymonthly sims page

@@ -2,7 +2,9 @@ package actionsPerformed;
 
 import org.openqa.selenium.WebElement;
 
-public class TabletPageActions {
+import helpers.Environment;
+
+public class TabletPageActions extends Environment {
 
 	
 	public static void validateElements(String Tabname)

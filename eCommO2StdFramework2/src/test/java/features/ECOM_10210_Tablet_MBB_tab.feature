@@ -1,7 +1,7 @@
 #Tablet_MBB tab having 1 Test case
- Feature: ECOM_10210 
+ Feature: ECOM10210 
  
-   @Regression
+   @RegressionECOM10210
    Scenario: Tablet Tab.
    Given I am an eComm test user02 in o2
     When I choose Sims and Pay Monthly sims

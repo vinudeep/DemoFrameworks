@@ -8,12 +8,12 @@ import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.support.ui.Select;
 
+import helpers.Environment;
 
 
-public class UpgradeCustomerPageActions {
+
+public class UpgradeCustomerPageActions extends Environment{
 	  
-	public WebDriver driver;
-	public List<HashMap<String, String>> datamap;
 
 	  		
 

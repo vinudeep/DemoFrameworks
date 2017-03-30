@@ -14,7 +14,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 @SuppressWarnings("unused")
 public class DataHelper {
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static HashMap<String,String> storeValues = new HashMap();
 
 
@@ -27,6 +27,7 @@ public class DataHelper {
 		{
 
 			FileInputStream fs = new FileInputStream(System.getProperty("C://Users//vmalalu1//workspace//eCommO2StdFramework1//src//test//java//resources//testData//TestData-seleniumframework.xlsx"));
+			@SuppressWarnings("resource")
 			XSSFWorkbook workbook = new XSSFWorkbook(fs);
 			XSSFSheet sheet = workbook.getSheet("TestData");
 			Row HeaderRow = sheet.getRow(0);

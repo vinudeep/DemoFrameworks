@@ -1,9 +1,8 @@
 package helpers;
 
-import java.io.File;
+
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -40,7 +39,7 @@ public class BrowserHelper {
 		}
 		else if (BrowserType.equalsIgnoreCase("chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver","C:\\Selenium\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","C:\\Automation\\Selenium\\chromedriver.exe");
 			//Environment.driver = new ChromeDriver();					
 			Environment.driver = new ChromeDriver();
 		}

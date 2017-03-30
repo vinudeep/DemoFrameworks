@@ -6,5 +6,7 @@ public class Environment {
 
 	public static WebDriver driver;
 	
+	}
 	
-}
+	
+

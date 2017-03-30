@@ -1,18 +1,13 @@
 package actionsPerformed;
 
-import java.util.HashMap;
-import java.util.List;
+
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 
-import helpers.DataHelper;
-import steps.Hooks;
 
-public class TariffAndExtrasPageActions {
+import helpers.Environment;
+
+public class TariffAndExtrasPageActions extends Environment {
 
 	   
 		public static void validateElements()

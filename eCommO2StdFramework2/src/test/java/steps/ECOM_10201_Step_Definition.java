@@ -5,13 +5,14 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import actionsPerformed.GlobalAction;
-import actionsPerformed.PAYMSimOPageActions;
+import GlobalActions.MouseHoverAction;
+import actionsPerformed.*;
+
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-
+import pageobjects.MouseHoverPage;
 import pageobjects.PAYMSimOPage;
 
 public class ECOM_10201_Step_Definition {
@@ -26,37 +27,21 @@ public class ECOM_10201_Step_Definition {
     @Given("^that I am a acquisition customer$")
     public void that_I_am_a_acquisition_customer() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        GlobalAction b1=new GlobalAction();
-        String Currenturl= b1.ExecutionURL("SimPayM");
-	      driver.get(Currenturl);
-	      
-	      //MouseHoverAction p1=PageFactory.initElements(driver, MouseHoverAction.class);
-			//p1.PayMSimoNavigation();
-			/*Autoredirection Autoredirect=PageFactory.initElements(driver, Autoredirection.class);
-			Autoredirect.redirect();*/
+    	PageFactory.initElements(driver, ShopLandingPageAction.class);
+    	ShopLandingPageAction.GetTitle();
+	    
     }
 
     @And("^I want to select a phone pay monhtly sim tariff$")
     public void i_want_to_select_a_phone_pay_monhtly_sim_tariff() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        
+    	PageFactory.initElements(driver, MouseHoverPage.class);
+		MouseHoverAction.PayMSimoNavigation();
     }
 
     @Then("^I should see the below contents inside the horizontal tariff tile$")
     public void i_should_see_the_below_contents_inside_the_horizontal_tariff_tile(List<String> Links) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
-        // E,K,V must be a scalar (String, Integer, Date, enum etc)
-    	//old code commented by shaman
-    	/*PayMsimspage p1=PageFactory.initElements(driver, PayMsimspage.class);
-		for (int i=0; i < Links.size(); i++)
-		{
-			System.out.println(Links.get(i));
-		}
-		p1.VerifyMinsDataDisplayed();
-		p1.VerifyCostDisplayed();*/
-		
+       		
 		PageFactory.initElements(driver, PAYMSimOPage.class);
 		for (int i=0; i < Links.size(); i++)
 		{

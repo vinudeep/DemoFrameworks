@@ -3,17 +3,13 @@ package GlobalActions;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.util.NoSuchElementException;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.Point;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import helpers.Environment;
 
@@ -28,12 +24,49 @@ public class MouseHoverAction extends Environment
 	 
 	  //Below will navigate to PayM Phones Page
 	 
-	  
+	public static void PayMPhonesLandingPage() throws InterruptedException, AWTException 
+	 {
+		  
+			try
+	    	{
+		  System.out.println("Performing PAYM Phones landing page navigations");
+		  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+		  Robot robot = new Robot();
+		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
+		 		  
+		  Actions action = new Actions(driver);
+		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPhones).build().perform();
+		  Thread.sleep(2000);
+		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPAYMPhones).build().perform();
+		  Thread.sleep(2000);
+		  pageobjects.MouseHoverPage.MoveMouseOnPAYMPhones.click();
+
+		  //Move mouse pointer away from location
+		  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+   		  Robot robot2 = new Robot();
+   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+	    	}
+	    	catch(ElementNotVisibleException e)
+	    	{
+	    	//check if popup is present, if yes, handle it.
+	    		Environment.driver.switchTo().frame("edr_l_first"); 
+	    		System.out.println("********We are switch to the iframe*******");
+	    		//Saying no to survey
+	    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
+	    		System.out.println("*******Saying no to survey*******");
+	    		System.out.println("*********Existing the popups present in iframe***************");
+	    		Environment.driver.switchTo().defaultContent();
+	    	}
+			
+	  }
+	
 	  //Below will navigate to PayG Phones Page
 	  
 	  //Below will navigate to Like New Phones Page
 		  
-		public static void likeNewHomepageNavigateion() throws InterruptedException, AWTException 
+	
+
+		public static void likeNewHomepageNavigation() throws InterruptedException, AWTException 
 	 {
 		  
 			try
@@ -51,9 +84,9 @@ public class MouseHoverAction extends Environment
 		  pageobjects.MouseHoverPage.MoveMouseOnLikeNew.click();
 
 		  //Move mouse pointer away from location
-		  Point coordinates2 = driver.findElement(By.id("shop-simplicity-header-xxl")).getLocation();
-		  Robot robot2 = new Robot();
-		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+		  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+   		  Robot robot2 = new Robot();
+   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
 	    	}
 	    	catch(ElementNotVisibleException e)
 	    	{
@@ -70,7 +103,42 @@ public class MouseHoverAction extends Environment
 	  }
 	  
       //Below will navigate to Tablets PayM Page
-	  
+		public static void PayMTabletsLandingPage() throws InterruptedException, AWTException 
+		 {
+			  
+				try
+		    	{
+			  System.out.println("Performing navigations to PAYM Tablets");
+			  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+			  Robot robot = new Robot();
+			  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
+			 		  
+			  Actions action = new Actions(driver);
+			  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnTablets).build().perform();
+			  Thread.sleep(2000);
+			  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnBrowseTablets).build().perform();
+			  Thread.sleep(2000);
+			  pageobjects.MouseHoverPage.MoveMouseOnBrowseTablets.click();
+
+			  //Move mouse pointer away from location
+			  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+	   		  Robot robot2 = new Robot();
+	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+		    	}
+		    	catch(ElementNotVisibleException e)
+		    	{
+		    	//check if popup is present, if yes, handle it.
+		    		Environment.driver.switchTo().frame("edr_l_first"); 
+		    		System.out.println("********We are switch to the iframe*******");
+		    		//Saying no to survey
+		    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
+		    		System.out.println("*******Saying no to survey*******");
+		    		System.out.println("*********Existing the popups present in iframe***************");
+		    		Environment.driver.switchTo().defaultContent();
+		    	}
+				
+		  }
+		
 	  //Below will navigate to Tablets PayG Page
 	  
 	  
@@ -98,7 +166,7 @@ public class MouseHoverAction extends Environment
 	   		  pageobjects.MouseHoverPage.MoveMouseOnPayMSims.click();
 
 	   		  //Move mouse pointer away from location
-	   		  Point coordinates2 = pageobjects.MouseHoverPage.MoveMouseOnShopHeader.getLocation();
+			  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
 	   		  Robot robot2 = new Robot();
 	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
 			  
@@ -157,7 +225,7 @@ public class MouseHoverAction extends Environment
 			  
 				try
 		    	{
-			  System.out.println("Performing Like New navigations");
+			  System.out.println("Performing Upgrade upgrade now navigations");
 			  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 			  Robot robot = new Robot();
 			  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
@@ -187,7 +255,8 @@ public class MouseHoverAction extends Environment
 		    	}
 				
 		  }
-	  
+
+	
  
 }
 

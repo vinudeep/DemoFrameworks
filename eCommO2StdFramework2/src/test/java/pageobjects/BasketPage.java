@@ -8,12 +8,8 @@ import org.openqa.selenium.support.How;
 
 
 @SuppressWarnings("unused")
-public class BasketPage extends BaseClass{
+public class BasketPage {
 	
-	public BasketPage(WebDriver driver)
-	{
-		super(driver);
-	}
 	
 
 	@FindBy(how=How.XPATH,using="(//a[contains(text(),'Remove')])[1]") 

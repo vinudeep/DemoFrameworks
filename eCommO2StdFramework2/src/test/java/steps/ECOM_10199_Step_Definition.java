@@ -26,13 +26,7 @@ public class ECOM_10199_Step_Definition {
 		MouseHoverAction.PayMSimoNavigation();
 	}
 
-	@When("^I am deciding the order of the pay-monthly sim tariffs$")
-	public void i_am_deciding_the_order_of_the_pay_monthly_sim_tariffs() throws Throwable 
-	{
-	System.out.println("Now on the PAYM SimO page");		    
-	}
-
-	
+		
 	@Then("^on landing of the Pay monthly sims page Pay monthly sims banner header as per today should be displayed$")
 	public void on_landing_of_the_Pay_monthly_sims_page_Pay_monthly_sims_banner_header_as_per_today_should_be_displayed() throws Throwable {
 		PageFactory.initElements(driver, PAYMSimOPage.class);
