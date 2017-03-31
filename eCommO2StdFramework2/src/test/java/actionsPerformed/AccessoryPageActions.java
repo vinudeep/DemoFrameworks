@@ -1,6 +1,8 @@
 package actionsPerformed;
 
-public class AccessoryPageActions {
+import helpers.Environment;
+
+public class AccessoryPageActions extends Environment{
 	
 	public static void Elementdisplayvalidation(String Tabname)
 	{

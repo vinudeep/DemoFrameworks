@@ -1,6 +1,9 @@
 package actionsPerformed;
 
-public class FitnessTrackerPageActions {
+import helpers.Environment;
+
+public class FitnessTrackerPageActions extends Environment {
+	
 	public static void Elementdisplayvalidation(String Tabname)
 	{
 		System.out.println(" ");

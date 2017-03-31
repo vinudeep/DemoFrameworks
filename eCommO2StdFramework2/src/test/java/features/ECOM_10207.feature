@@ -1,5 +1,5 @@
 #Tarrif Decending order validation.  having 1 Test Case
-Feature: Ecom_10207 
+Feature: Ecom10207 
 
   @smokeTest
   Scenario: Validate the tarrif containing in the decending order

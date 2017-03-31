@@ -1,5 +1,5 @@
 #Sample Feature Definition Template having 8 test cases
-Feature: ECOM-10243,ECOM-10253 
+Feature: ECOM10243,ECOM10253 
 
   @smokeTest
   Scenario: Flow of SIM Free with any accessory

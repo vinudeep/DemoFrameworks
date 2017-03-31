@@ -1,6 +1,6 @@
 #Simo_Journey_order_placed  having 1 Test Case
 
-Feature: ECOM_10392
+Feature: ECOM10392
 
   @smokeTest
   Scenario: Simo journey order.

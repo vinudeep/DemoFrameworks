@@ -1,6 +1,10 @@
 package actionsPerformed;
 
-public class SmartwatchesPageActions {
+import helpers.Environment;
+
+public class SmartwatchesPageActions extends Environment
+
+{
 	public static void Elementdisplayvalidation(String Tabname)
 	{
 		System.out.println(" ");

@@ -9,17 +9,11 @@ import org.openqa.selenium.support.How;
 
 ;
 
-public class Sim_Free_Phone_POM extends BaseClass {
+public class Sim_Free_Phone_POM  {
 	
 	 
 	  
-	  public Sim_Free_Phone_POM(WebDriver Idriver)
-	  {
-		  
-		  super(driver);
-		  
-	  }
-
+	  
 		@FindBy(how=How.XPATH,using="(//*[@id='PayMonthlyTariffsGridTab']/li[1]/div/h3)[1]") 
 		WebElement Device_only_sim_free_Tile ;
 	

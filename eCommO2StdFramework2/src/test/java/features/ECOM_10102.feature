@@ -1,5 +1,5 @@
 #This features containing 4 test cases story of ECOM-10102 valiudation the Enhanced filter Tab having 4 Test Cases
-Feature: ECOM-10102 
+Feature: ECOM10102 
 
   @smokeTest
   Scenario: Enhancing Filter Tab on Tablet Listing page

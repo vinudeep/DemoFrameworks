@@ -1,5 +1,5 @@
 #Sim_Free_Pacakge_Validation having 2 Test Cases
-Feature: ECOM_10388 
+Feature: ECOM10388 
 
   @smokeTest
   Scenario: Pacakage validation 12month Tarrif

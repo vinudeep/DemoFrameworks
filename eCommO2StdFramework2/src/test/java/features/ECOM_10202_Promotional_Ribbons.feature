@@ -1,6 +1,6 @@
 #Promotional Ribbon eComm10202 having 1 Test case
 
-Feature: ECOM_10202 
+Feature: ECOM10202 
 
   @smokeTest
   Scenario: Promotional Ribbon.

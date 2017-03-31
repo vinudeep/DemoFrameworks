@@ -3,14 +3,10 @@ package GlobalActions;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.util.NoSuchElementException;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.Point;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -33,6 +29,7 @@ public class MouseHoverAction_backup extends Environment
 	  
 	  //Below will navigate to Like New Phones Page
 		  
+	
 		public static void likeNewHomepageNavigateion() throws InterruptedException, AWTException 
 	 {
 		  

@@ -1,13 +1,22 @@
 package steps;
 
+import java.awt.Robot;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import GlobalActions.Autoredirection;
+import GlobalActions.MouseHoverAction;
 import actionsPerformed.AccessoryPageActions;
 import actionsPerformed.BasketPageActions;
 import actionsPerformed.FitnessTrackerPageActions;
 import actionsPerformed.GlobalAction;
+import actionsPerformed.ShopLandingPageAction;
 import actionsPerformed.SmartwatchesPageActions;
 import actionsPerformed.TabletPageActions;
 import cucumber.api.java.en.And;
@@ -18,6 +27,8 @@ import helpers.Filereadingutility;
 import pageobjects.AccessoryPage;
 import pageobjects.BasketPage;
 import pageobjects.FitnessTrackerPage;
+import pageobjects.MouseHoverPage;
+import pageobjects.ShopLandingPage;
 import pageobjects.SmartwatchesPage;
 import pageobjects.TabletPage;
 
@@ -38,15 +49,27 @@ public class ECOM_10102_Step_Definition {
 public void that_I_am_an_upgrading_acqusition_customer_Tablet_journey() throws Throwable {
     // Write code here that turns the phrase above into concrete actions
 	
-         GlobalAction b1=new GlobalAction();
-         String Currenturl= b1.ExecutionURL("TabletUrl");
+          GlobalAction b1=new GlobalAction();
+          String Currenturl= b1.ExecutionURL("o2_home");
 	      driver.get(Currenturl);
+	      Thread.sleep(5000);      
+	  	  PageFactory.initElements(driver, MouseHoverPage.class);
+		  MouseHoverAction.PayMTabletsLandingPage();
+	  	  
 }
 
 @And("^I land on the tablet listing page on O(\\d+) Shop$")
 public void i_land_on_the_tablet_listing_page_on_O_Shop(int arg1) throws Throwable {
     // Write code here that turns the phrase above into concrete actions
-	Assert.assertEquals(driver.getCurrentUrl(), "https://www.o2.co.uk/shop/tablets/#sort=content.sorting.featured&page=1" );
+	
+	Thread.sleep(5000);
+	if(driver.getCurrentUrl().contains("ref"))
+		System.out.println("Land on the Tablet listing page of ref Environment");
+	else
+		Autoredirection.redirect();
+	PageFactory.initElements(driver, ShopLandingPage.class);
+	ShopLandingPageAction.GetTitle();
+
 }
 
 @Then("^the enhanced filter tab should be displayed to on Tablet as per given Ux$")
@@ -59,15 +82,19 @@ public void the_enhanced_filter_tab_should_be_displayed_to_on_Tablet_as_per_give
 @Given("^that I am an upgrading/acquisition customer Accessory Journey$")
 public void that_I_am_an_upgrading_acquisition_customer_Accessory_Journey() throws Throwable {
     // Write code here that turns the phrase above into concrete actions
-	 GlobalAction b1=new GlobalAction();
-     String Currenturl= b1.ExecutionURL("AccessoryUrl");
-      driver.get(Currenturl);
+	GlobalAction b1=new GlobalAction();
+    String Currenturl= b1.ExecutionURL("o2_home");
+    driver.get(Currenturl);
+    Thread.sleep(5000);
+    PageFactory.initElements(driver, MouseHoverPage.class);
+	MouseHoverAction.AccessoriesLandingPage();
 }
 
 @And("^I land on the accessory listing page on O(\\d+) Shop$")
 public void i_land_on_the_accessory_listing_page_on_O_Shop(int arg1) throws Throwable {
     // Write code here that turns the phrase above into concrete actions
-	Assert.assertEquals(driver.getCurrentUrl(), "https://www.o2.co.uk/shop/accessories/all/#sort=content.sorting.featured&page=1" );
+	Autoredirection.redirect();
+	Assert.assertEquals(driver.getCurrentUrl(), "https://www.ref.o2.co.uk/shop/accessories/all#sort=content.sorting.featured&page=1");
 }
 
 
@@ -82,8 +109,10 @@ public void the_enhanced_filter_tab_should_be_displayed_to_on_Accessory_as_per_g
 public void that_I_am_an_upgrading_acquisition_customer_Fitness_Journey() throws Throwable {
     // Write code here that turns the phrase above into concrete actions
 	 GlobalAction b1=new GlobalAction();
-     String Currenturl= b1.ExecutionURL("Fitnessurl");
-      driver.get(Currenturl);
+     String Currenturl= b1.ExecutionURL("o2_home");
+     driver.get(Currenturl);
+     PageFactory.initElements(driver, MouseHoverPage.class);
+ 	 MouseHoverAction.FitnessLandingPage();;
 }
 
 
@@ -91,7 +120,8 @@ public void that_I_am_an_upgrading_acquisition_customer_Fitness_Journey() throws
 @And("^I land on the Ftiness Trackers listing page on O(\\d+) Shop$")
 public void i_land_on_the_Ftiness_Trackers_listing_page_on_O_Shop(int arg1) throws Throwable {
     // Write code here that turns the phrase above into concrete actions
-	Assert.assertEquals(driver.getCurrentUrl(), "https://www.o2.co.uk/shop/fitness-trackers/#sort=content.sorting.featured&page=1");
+	Autoredirection.redirect();
+	Assert.assertEquals(driver.getCurrentUrl(), "https://www.ref.o2.co.uk/shop/fitness-trackers/#sort=content.sorting.featured&page=1");
 }
 
 
@@ -110,14 +140,17 @@ public void the_enhanced_filter_tab_should_be_displayed_to_on_Fitness_as_per_giv
 public void that_I_am_an_upgrading_acquisition_customer_Smartwatches() throws Throwable {
     // Write code here that turns the phrase above into concrete actions
 	 GlobalAction b1=new GlobalAction();
-     String Currenturl= b1.ExecutionURL("SmartwatchesUrl");
-      driver.get(Currenturl);
+     String Currenturl= b1.ExecutionURL("o2_home");
+     driver.get(Currenturl);
+     PageFactory.initElements(driver, MouseHoverPage.class);
+ 	 MouseHoverAction.SmartwatchesLandingPage();
 }
 
 @And("^I land on the Smartwatches Trackers listing page on O(\\d+) Shop$")
 public void i_land_on_the_Smartwatches_Trackers_listing_page_on_O_Shop(int arg1) throws Throwable {
     // Write code here that turns the phrase above into concrete actions
-	Assert.assertEquals(driver.getCurrentUrl(), "https://www.o2.co.uk/shop/smartwatches/#sort=content.sorting.featured&page=1" );
+	Autoredirection.redirect();
+	Assert.assertEquals(driver.getCurrentUrl(), "https://www.ref.o2.co.uk/shop/smartwatches/#sort=content.sorting.featured&page=1" );
 }
 
 

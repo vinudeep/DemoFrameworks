@@ -1,18 +1,13 @@
 package actionsPerformed;
 
-import java.util.HashMap;
-import java.util.List;
+
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 
-import helpers.DataHelper;
-import steps.Hooks;
 
-public class TariffAndExtrasPageActions {
+import helpers.Environment;
+
+public class TariffAndExtrasPageActions extends Environment {
 
 	   
 		public static void validateElements()
@@ -32,13 +27,13 @@ public class TariffAndExtrasPageActions {
 			 }else{
 			  System.out.println("The  PayG_Tab is Absent and the Text is :" +pageobjects.TariffAndExtrasPage.PayGTab.getText());
 			 }
-			if(pageobjects.TariffAndExtrasPage.GotoBasket.getText().contains("Go to basket"))
+			/*if(pageobjects.TariffAndExtrasPage.GotoBasket.getText().contains("Go to basket"))
 			 {
 				System.out.println("The GoToBasket_Tab is Present and the Text is :" +pageobjects.TariffAndExtrasPage.GotoBasket.getText());
 			 }else{
 			  System.out.println("The  GoToBasket_Tab is Absent and the Text is :" +pageobjects.TariffAndExtrasPage.GotoBasket.getText());
 			  
-			 }
+			 }*/
 			if(pageobjects.TariffAndExtrasPage.Contractlength.getText().contains("Contract length"))
 			 {
 				System.out.println("The Contractlength_label is Present and the Text is :" +pageobjects.TariffAndExtrasPage.Contractlength.getText());
@@ -77,7 +72,7 @@ public class TariffAndExtrasPageActions {
 		
 		public static void basket_select()
 		{
-			pageobjects.TariffAndExtrasPage.GotoBasket.sendKeys(Keys.ENTER);
+			pageobjects.TariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
 			
 		}
 	

@@ -1,6 +1,5 @@
 package GlobalActions;
 
-import org.openqa.selenium.WebDriver;
 
 import helpers.Environment;
 
@@ -10,6 +9,7 @@ import helpers.Environment;
 public class Autoredirection extends Environment {
 	
 	
+
 public static void redirect() throws InterruptedException{
 		
 	String url=driver.getCurrentUrl();

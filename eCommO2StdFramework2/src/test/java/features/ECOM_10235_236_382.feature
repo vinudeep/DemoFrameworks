@@ -1,5 +1,5 @@
 #having 1 Test case
- Feature: ECOM_10235,ECOM_10236,ECOM_10382 
+ Feature: ECOM10235,ECOM10236,ECOM10382 
 
 @smokeTest
 Scenario: CFA Validating  Most Recommended feature in PAYM simonly page

@@ -1,6 +1,6 @@
 #Sort Order For PAYM Sims Tariffs having 1 Test Case 
 
-Feature: ECOM_10199 
+Feature: ECOM10199 
 
   @smokeTest
   Scenario: This scenario ensures that the default order of the tariff tiles is high to low

@@ -296,12 +296,12 @@ public static void ElementClick2(String elementName) throws InterruptedException
 	} else
 		System.out.println("Why choose an O2 Pay Monthly sim? - section is not displayed ");
 
-	boolean tile = pageobjects.PAYMSimOPage.PromotionTariff.isDisplayed();
+	/*boolean tile = pageobjects.PAYMSimOPage.PromotionTariff.isDisplayed();
 
 	if (tile = true) {
 		System.out.println("Most popular/Recommended tariff tile is displayed");
 	}
-
+*/
 	boolean tile1 = pageobjects.PAYMSimOPage.tariff1tile.isDisplayed();
 
 	if (tile1 = true) {
@@ -377,12 +377,12 @@ public static void ElementClick2(String elementName) throws InterruptedException
 		} else
 			System.out.println("Priority copytext is not displayed");
 		
-		boolean whyo2_3 =pageobjects.PAYMSimOPage.whyo2guru.isDisplayed();
+		/*boolean whyo2_3 =pageobjects.PAYMSimOPage.whyo2guru.isDisplayed();
 
 		if (whyo2_3 = true) {
 			System.out.println("Guru image is displayed");
 		} else
-			System.out.println("Guru image is not displayed");
+			System.out.println("Guru image is not displayed");*/
 
 		
 		boolean whyo2_4 =pageobjects.PAYMSimOPage.whyo2guru_txt.isDisplayed();

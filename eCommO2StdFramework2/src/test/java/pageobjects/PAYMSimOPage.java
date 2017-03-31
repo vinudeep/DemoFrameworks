@@ -1,14 +1,7 @@
 package pageobjects;
 
-import java.io.IOException;
-import java.util.List;
 
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -67,52 +60,52 @@ public class PAYMSimOPage {
 	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[2]/a"))
 	public static WebElement whychoosesimolink;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[9]/div/div[1]/ul/li[1]/img"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[10]/div/div[1]/ul/li[1]/img"))
 	public static WebElement wifi_img;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[9]/div/div[1]/ul/li[1]/span"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[10]/div/div[1]/ul/li[1]/span"))
 	public static WebElement wifi_img_txt;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[9]/div/div[1]/ul/li[2]/img"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[10]/div/div[1]/ul/li[2]/img"))
 	public static WebElement keepyournumb_img;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[9]/div/div[1]/ul/li[2]/span"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[10]/div/div[1]/ul/li[2]/span"))
 	public static WebElement keepyournumb_img_txt;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[9]/div/div[1]/ul/li[3]/img"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[10]/div/div[1]/ul/li[3]/img"))
 	public static WebElement rank_img;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[9]/div/div[1]/ul/li[3]/span"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[10]/div/div[1]/ul/li[3]/span"))
 	public static WebElement rank_img_txt;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[9]/div/div[1]/ul/li[4]/img"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[10]/div/div[1]/ul/li[4]/img"))
 	public static WebElement tugo_img;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[9]/div/div[1]/ul/li[4]/span"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[10]/div/div[1]/ul/li[4]/span"))
 	public static WebElement tugo_img_txt;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[9]/div/div[1]/div[2]/h3"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[10]/div/div[1]/div[2]/h3"))
 	public static WebElement whychoosesimowrap;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[9]/div/div[2]/div[2]/h3"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[10]/div/div[2]/div[2]/h3"))
 	public static WebElement whyo2;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[9]/div/div[2]/ul/li[1]/img"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[10]/div/div[2]/ul/li[1]/img"))
 	public static WebElement whyo2priority;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[9]/div/div[2]/ul/li[1]/div"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[10]/div/div[2]/ul/li[1]/div"))
 	public static WebElement whyo2priority_txt;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[9]/div/div[2]/ul/li[2]/img"))
-	public static WebElement whyo2guru;
+	//@FindBy(how = How.XPATH, using = ("//*[@//*[@id='contentWrapper']/div[3]/div/div[10]/div/div[2]/ul/li[2]/img"))
+	//public static WebElement whyo2guru;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[9]/div/div[2]/ul/li[2]/div"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[10]/div/div[2]/ul/li[2]/div"))
 	public static WebElement whyo2guru_txt;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[9]/div/div[2]/ul/li[3]/img"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[10]/div/div[2]/ul/li[3]/img"))
 	public static WebElement whyo2myo2;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[9]/div/div[2]/ul/li[3]/div"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[10]/div/div[2]/ul/li[3]/div"))
 	public static WebElement whyo2myo2_txt;
 /*
 	@FindBy(how = How.XPATH, using = ("//*[@id='57f98c88-687a-4ba4-96ce-0f1e8bf1e1ea']/div[9]"))
@@ -122,28 +115,28 @@ public class PAYMSimOPage {
 	@FindBy(how = How.XPATH, using = ("//*[@id='8d953bfa-90ae-44c1-bfd5-18814d6f4a00']/div[6]"))
 	public static WebElement tariff1tile;
 */
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[6]/div[7]/div[9]"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='2906f2c0-ac58-4e64-b199-e8d0c21b36df']"))
 	public static WebElement tariff1tile;
 	
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[6]/div[11]/div[6]"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='07b0b285-5ba6-4af3-be0f-55e973980e2a']"))
 	public static WebElement tariff2tile;
 	
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[6]/div[12]/div[6]"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='3dce474a-2f77-4157-ba86-f56c8323bc6c']"))
 	public static WebElement tariff3tile;
 	
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[6]/div[13]/div[6]"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='9da1325c-4ba0-4853-b4e2-a81c2c75e239']"))
 	public static WebElement tariff4tile;
 	
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[6]/div[14]/div[6]"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='923bbba8-e62c-4622-a01f-a26b802e2635']"))
 	public static WebElement tariff5tile;
 	
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[6]/div[15]/div[6]"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='cf5d9e6e-d930-4e34-bf1c-d86a243a3c0e']"))
 	public static WebElement tariff6tile;
 	
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[6]/div[16]/div[6]"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='c478e296-371d-45ea-9da9-470d8d23fe45']"))
 	public static WebElement tariff7tile;
 	
-	@FindBy(how = How.XPATH, using = ("//*[@id='contentWrapper']/div[3]/div/div[6]/div[17]/div[6]"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='1614c1ab-c03a-49f4-9346-cd3933c8cab2']"))
 	public static WebElement tariff8tile;
 	
 	/*
@@ -159,13 +152,13 @@ public class PAYMSimOPage {
 	*/
 	
 	
-	@FindBy(how = How.XPATH, using = ("//button[contains(text(),'Buy now'"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='callToAction']"))
 	public static WebElement BuyNowButton;
 	
-	@FindBy(how = How.XPATH, using = ("//*[@id='checkbox-57f98c88-687a-4ba4-96ce-0f1e8bf1e1ea-6']"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='checkbox-2906f2c0-ac58-4e64-b199-e8d0c21b36df-6']"))
 	public static WebElement CheckboxPresence;
 	
-	@FindBy(how = How.XPATH, using = ("//*[@id='checkbox-57f98c88-687a-4ba4-96ce-0f1e8bf1e1ea-6']"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='2906f2c0-ac58-4e64-b199-e8d0c21b36df']/div[8]/div/span"))
 	public static WebElement CheckboxName;
 	
 	//@FindBy(how = How.CLASS_NAME, using = ("col-xs-12 promotion-ribbon"))
@@ -178,10 +171,12 @@ public class PAYMSimOPage {
 	public static WebElement months12tab;
 	
 	@FindBy(how=How.XPATH,using=("//a[contains(text(),'30 days')]"))
+	
+	
 	public static WebElement days30tab;
 	
-	@FindBy(how=How.CSS,using=(".col-xs-12.promotion-ribbon"))
-	public static WebElement PromotionTariff;
+	//@FindBy(how=How.CSS,using=(".col-xs-12.promotion-ribbon"))
+	//public static WebElement PromotionTariff;
 	
 	
 

@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import GlobalActions.Autoredirection;
 import actionsPerformed.AccessoryPageActions;
 import actionsPerformed.FitnessTrackerPageActions;
 import actionsPerformed.SmartwatchesPageActions;
@@ -45,7 +46,8 @@ public class ECOM_10136_Step_Definition {
 	@And("^I land on the Smartwatchess Trackers listing page on O(\\d+) Shop$")
 	public void i_land_on_the_Smartwatchess_Trackers_listing_page_on_O_Shop(int arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		Assert.assertEquals(driver.getCurrentUrl(), "https://www.o2.co.uk/shop/smartwatches/#sort=content.sorting.featured&page=1" );
+		Autoredirection.redirect();
+		Assert.assertEquals(driver.getCurrentUrl(), "https://www.ref.o2.co.uk/shop/smartwatches/#sort=content.sorting.featured&page=1" );
 	}
 
 	@And("^I click on the SORT tab of Smartwatches$")
@@ -65,8 +67,9 @@ public class ECOM_10136_Step_Definition {
 
 	@And("^I land on the FtinessTracker Trackers listing page on O(\\d+) Shop$")
 	public void i_land_on_the_FtinessTracker_Trackers_listing_page_on_O_Shop(int arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		Assert.assertEquals(driver.getCurrentUrl(), "https://www.o2.co.uk/shop/fitness-trackers/#sort=content.sorting.featured&page=1");
+	    // Write code here that turns the phrase above into concrete actions	
+		Autoredirection.redirect();
+		Assert.assertEquals(driver.getCurrentUrl(), "https://www.ref.o2.co.uk/shop/fitness-trackers/#sort=content.sorting.featured&page=1");
 	}
 
 	@And("^I click on the SORT tab of Fitness$")

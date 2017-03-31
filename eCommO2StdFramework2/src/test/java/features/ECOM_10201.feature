@@ -1,5 +1,5 @@
 #Horizontal Tariff Structure Inner modules having 2 Test cases
-Feature: ECOM_10201  
+Feature: ECOM10201  
 
   @smokeTest
   Scenario: Horizontal Tariff Structure - Inner modules
@@ -14,7 +14,7 @@ Feature: ECOM_10201
     And If customer does not select this check box, then the selection is considered as Smartphone
 
 
-  @smokeTest12e
+  @smokeTest
   Scenario: Horizontal Tariff Structure - Inner modules
     Given that I am a Upgrade customer
     When I land on the Pay monthly sims page

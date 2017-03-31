@@ -1,6 +1,6 @@
 #Sim_Free_Acquisition_validation.having 4 Test Cases
 
-Feature: ECOM_10241 
+Feature: ECOM10241 
 
   @smokeTest
   Scenario: Sim_Free_Acquisition_Journey

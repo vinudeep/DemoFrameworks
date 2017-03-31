@@ -34,11 +34,11 @@ public class Ecomm10205_206_203_202_Steps {
 	public void that_I_am_a_CFA_Pay_Monthly_SIMO_Customer() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		 GlobalAction b1=new GlobalAction();
-         String Currenturl= b1.ExecutionURL("SimPayM");
+         String Currenturl= b1.ExecutionURL("o2_home");
 	      driver.get(Currenturl);
-	      //Commented by shaman
-		//PageFactory.initElements(driver, MouseHoverPage.class);
-		//MouseHoverAction.PayMSimoNavigation();
+	      Thread.sleep(5000);
+		PageFactory.initElements(driver, MouseHoverPage.class);
+		MouseHoverAction.PayMSimoNavigation();
 		}
 
 	@Then("^I should be able to see the \"([^\"]*)\" tariff on the PAYM sims page$")
@@ -80,22 +80,23 @@ public class Ecomm10205_206_203_202_Steps {
 	public void that_I_am_a_CFU_Pay_Monthly_SIMO_Customer() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		GlobalAction b1=new GlobalAction();
-        String Currenturl= b1.ExecutionURL("upgrade");
+        String Currenturl= b1.ExecutionURL("o2_home");
 	      driver.get(Currenturl);
 		
-	      //Commented by shaman
-	      /*PageFactory.initElements(driver, MouseHoverPage.class);
+	     
+	     PageFactory.initElements(driver, MouseHoverPage.class);
 		PageFactory.initElements(driver, UpgradeCustomerPage.class);
 		MouseHoverAction.UpgradeandUpgradeNow();
 		Autoredirection.redirectUpgrades();
 		UpgradeCustomerPageActions.Login();
-		MouseHoverAction.UpgradeandUpgradeNow();*/
-	  	PageFactory.initElements(driver, UpgradeCustomerPage.class);
+		MouseHoverAction.UpgradeandUpgradeNow();
+	//  Commented by shaman
+		/*PageFactory.initElements(driver, UpgradeCustomerPage.class);
 	     Thread.sleep(5000);
 			pageobjects.UpgradeCustomerPage.username.sendKeys("ink_jun9198");
 			pageobjects.UpgradeCustomerPage.password.sendKeys("test123");
 			pageobjects.UpgradeCustomerPage.signInButton.click();
-		UpgradeCustomerPageActions.PickSimOTariff();
+		UpgradeCustomerPageActions.PickSimOTariff();*/
 		
 	}
 

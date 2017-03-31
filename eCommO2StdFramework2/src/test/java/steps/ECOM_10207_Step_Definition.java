@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+import GlobalActions.MouseHoverAction;
 import actionsPerformed.BasketPageActions;
 import actionsPerformed.GlobalAction;
 import actionsPerformed.LikefreeHomepageAction;
@@ -18,6 +19,7 @@ import cucumber.api.java.en.When;
 import helpers.DataHelper;
 import junit.framework.Assert;
 import pageobjects.LikeFreePage;
+import pageobjects.MouseHoverPage;
 import pageobjects.SimFreeDevicePage;
 
 public class ECOM_10207_Step_Definition {
@@ -33,12 +35,14 @@ public class ECOM_10207_Step_Definition {
 	@Given("^that I am a merchandising manager$")
 	public void that_I_am_a_merchandising_manager() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		GlobalAction b1=new GlobalAction();
-        String Currenturl= b1.ExecutionURL("likenewurl");
-	      driver.get(Currenturl);
-		
-		 PageFactory.initElements(driver, LikeFreePage.class);
-		 LikefreeHomepageAction.ElementClick("simfree");
+	    	GlobalAction b1=new GlobalAction();
+            String Currenturl= b1.ExecutionURL("o2_home");
+	        driver.get(Currenturl);
+	      
+	      PageFactory.initElements(driver, MouseHoverPage.class);
+		  MouseHoverAction.likeNewHomepageNavigation();
+		  PageFactory.initElements(driver, LikeFreePage.class);
+		  LikefreeHomepageAction.ElementClick("simfree");
     	 
 	}
 

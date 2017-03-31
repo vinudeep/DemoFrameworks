@@ -1,6 +1,6 @@
 #having 1 Test case
 
- Feature: ECOM_10099 
+ Feature: ECOM10099 
 
 @smokeTest
 Scenario: CFA Validating  Most Recommended feature in PAYM simonly page

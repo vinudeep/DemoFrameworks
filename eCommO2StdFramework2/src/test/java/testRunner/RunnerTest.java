@@ -44,6 +44,7 @@ public class RunnerTest {
 		systemInfo.put("Cucumber version", "v1.2.3");
 		systemInfo.put("Environment", "QA");
 		ExtentCucumberFormatter.addSystemInfo(systemInfo);
+		
 	}
 
 	@AfterSuite

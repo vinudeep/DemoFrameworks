@@ -1,5 +1,5 @@
 #Tablet_MBB tab having 1 Test case
- Feature: ECOM_10210 
+ Feature: ECOM10210 
  
    @Regression
    Scenario: Tablet Tab.

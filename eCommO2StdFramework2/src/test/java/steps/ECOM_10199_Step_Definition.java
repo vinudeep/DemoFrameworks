@@ -3,14 +3,18 @@ package steps;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
+import GlobalActions.MouseHoverAction;
 import actionsPerformed.GlobalAction;
 import actionsPerformed.PAYMSimOPageActions;
+import actionsPerformed.TabletPageActions;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import pageobjects.MouseHoverPage;
 import pageobjects.PAYMSimOPage;
-import pageobjects.PayMsimspage;
+
+import pageobjects.TabletPage;
 
 public class ECOM_10199_Step_Definition {
 
@@ -28,8 +32,10 @@ public class ECOM_10199_Step_Definition {
     public void i_am_an_eComm_user_in_o(int arg1, int arg2) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
     	 GlobalAction b1=new GlobalAction();
-         String Currenturl= b1.ExecutionURL("o2o2o2");
+         String Currenturl= b1.ExecutionURL("o2_home");
 	      driver.get(Currenturl);  
+	      PageFactory.initElements(driver, MouseHoverPage.class);
+		  MouseHoverAction.PayMSimoNavigation();
     }
 
     @When("^I am deciding the order of the pay-monthly sim tariffsss$")
@@ -41,18 +47,18 @@ public class ECOM_10199_Step_Definition {
     @Then("^on landing of the Pay monthly sims page Pay monthly sims banner header as per today should be displayed$")
     public void on_landing_of_the_Pay_monthly_sims_page_Pay_monthly_sims_banner_header_as_per_today_should_be_displayed() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-    	PayMsimspage p2=PageFactory.initElements(driver, PayMsimspage.class);
-		p2.ElementClick2("paymheader");
+		PageFactory.initElements(driver, PAYMSimOPage.class);
+		PAYMSimOPageActions.ElementClick2("paymheader");
 	    
     }
 
     @And("^tabbed structure for phone/tablet and mbb should be displayed$")
     public void tabbed_structure_for_phone_tablet_and_mbb_should_be_displayed() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-    	PayMsimspage p3=PageFactory.initElements(driver, PayMsimspage.class);
-		p3.ElementClick2("simphonetab");
-		p3.ElementClick2("simtablettab");
-		p3.ElementClick2("simmbbtab");
+		PageFactory.initElements(driver, PAYMSimOPage.class);
+		PAYMSimOPageActions.ElementClick2("simphonetab");
+		PAYMSimOPageActions.ElementClick2("simtablettab");
+		PAYMSimOPageActions.ElementClick2("simmbbtab");
     }
 
     @And("^Why choose an O(\\d+) Pay Monthly sim\\? link should be displayed$")

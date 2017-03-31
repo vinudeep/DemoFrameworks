@@ -1,21 +1,17 @@
 package pageobjects;
 
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import helpers.Environment;
 
 
-public class LikeFreePage extends BaseClass{
+
+public class LikeFreePage extends Environment{
 	
-	public LikeFreePage(WebDriver driver)
-	{
-		super(driver);
-	}
 	
-
 	@FindBy(how=How.XPATH,using="(//a[contains(@href, 'https://www.o2.co.uk/shop/like-new/sim-free-phones')])[1]") 
 	public static WebElement simfree1;
 	

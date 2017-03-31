@@ -1,18 +1,16 @@
 package actionsPerformed;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
+
+
+import helpers.Environment;
 
 //import Environment.Environment;
 
 
 
-@SuppressWarnings("unused")
-public class SimFreeDevicePageActions {
+public class SimFreeDevicePageActions  extends Environment{
 	
 	public static void validatetile()
 		{   
